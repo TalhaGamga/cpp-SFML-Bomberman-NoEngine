@@ -1,0 +1,5 @@
+﻿  Game.cpp
+  main.cpp
+C:\Users\seNpai\Desktop\SFML-GameDev-Learning\SFML-GameDev-Learning\main.cpp(4,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Window.cpp
+LINK : fatal error LNK1181: cannot open input file 'jpeg.lib'

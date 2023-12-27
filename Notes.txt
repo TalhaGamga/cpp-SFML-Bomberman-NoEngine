@@ -1,0 +1,2 @@
+MapData share a sharedData among the mapObjects
+each mapObejct check its own collision inside of it
