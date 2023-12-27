@@ -63,5 +63,6 @@ private:
 	sf::Vector2f dropPos;
 
 	sf::RectangleShape* blockerColliderShape;
+	sf::Texture charTexture;
 	Collider* blockerCollider;
 };

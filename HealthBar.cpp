@@ -7,7 +7,7 @@ HealthBar::HealthBar(Damageable* damageable) :
 {
 	this->damageable = damageable;
 	backgroundBarShape.setFillColor(sf::Color::White);
-	foregroundBarShape.setFillColor(sf::Color::Green);
+	foregroundBarShape.setFillColor(sf::Color::Red);
 
 	foregroundBarShape.setSize(fgSize);
 	backgroundBarShape.setSize(bgSize);

@@ -5,7 +5,7 @@
 Bomb::Bomb(sf::Vector2f position, MapData* mapData, CharacterBase* dropper) : MapObject(mapData), isExploded(false)
 {
 	bombShape.setFillColor(sf::Color(169, 169, 169));
-	bombShape.setSize(sf::Vector2f(35.0f, 35.0f));
+	bombShape.setSize(sf::Vector2f(50.0F, 50.0f));
 	bombShape.setOrigin(bombShape.getSize().x / 2, bombShape.getSize().y / 2);
 
 	int indX = static_cast<int>(position.x / 90.0f);
@@ -24,6 +24,11 @@ Bomb::Bomb(sf::Vector2f position, MapData* mapData, CharacterBase* dropper) : Ma
 	mapData->AddToCollidables(this);
 
 	isObstacle = true;
+
+	if (bombTexture.loadFromFile("Assets/Sprites/bomb.png"))
+	{
+		bombShape.setTexture(&bombTexture);
+	}
 }
 
 void Bomb::Update()

@@ -28,5 +28,6 @@ protected:
 
 private:
 	sf::RectangleShape wallShape;
+	sf::Texture wallTexture;
 	MapData* mapData;
 };

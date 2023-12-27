@@ -38,6 +38,9 @@ private:
 	sf::RenderWindow window;
 	sf::Vector2u windowSize;
 	std::string windowTitle;
+	sf::Color* bgColor;
+	sf::Texture bgTexture;
+	sf::Sprite bgSprite;
 
 	bool isDone;
 	bool isFullScreen;

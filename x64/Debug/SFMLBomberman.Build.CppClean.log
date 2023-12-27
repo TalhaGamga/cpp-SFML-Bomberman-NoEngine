@@ -1,12 +1,12 @@
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\vc143.pdb
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\vc143.idb
-d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\playstate.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\player.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\map_1.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\mapobject.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\main.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\level_1.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\levelmanager.obj
+d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\healthbar.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\gameoverstate.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\game.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\eventmanager.obj
@@ -26,6 +26,7 @@ d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\pauseds
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\gamestatemanager.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\mainmenustate.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\introstate.obj
+d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\playstate.obj
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\sfmlbomberman.ilk
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\sfmlbomberman.exe
 d:\gmgdevelopment\programmingworks\yenisfml\sfmlbomberman-main\x64\debug\sfmlbomberman.pdb

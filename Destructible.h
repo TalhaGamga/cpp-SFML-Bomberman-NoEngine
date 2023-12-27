@@ -24,6 +24,7 @@ protected:
 	virtual void onCollisionExit(Collidable* other) override;
 private:
 	sf::RectangleShape destructibleShape;
+	sf::Texture destructibleTexture;
 	float damageAffectTime = 1;
 	bool isDamaged = false;
 };

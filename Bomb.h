@@ -29,6 +29,7 @@ protected:
 
 private:
 	sf::RectangleShape bombShape;
+	sf::Texture bombTexture;
 	bool isExploded;
 	float timer = 10;
 	CharacterBase* dropper;

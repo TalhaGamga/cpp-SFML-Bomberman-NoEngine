@@ -5,7 +5,6 @@ Destructible::Destructible(sf::Vector2f pos, MapData* mapData) : MapObject(mapDa
 	initialHp = 20;
 	destructibleShape.setSize(mapData->gridSize - sf::Vector2f(2.0f, 2.0f));
 	destructibleShape.setOrigin(destructibleShape.getSize().x / 2, destructibleShape.getSize().y / 2);
-	destructibleShape.setFillColor(sf::Color(139, 69, 19));
 
 	SetPosition(pos);
 
@@ -13,6 +12,11 @@ Destructible::Destructible(sf::Vector2f pos, MapData* mapData) : MapObject(mapDa
 
 	mapData->AddToMapObjs(this);
 	mapData->AddToCollidables(this);
+
+	if (destructibleTexture.loadFromFile("Assets/Sprites/crate.png"))
+	{
+		destructibleShape.setTexture(&destructibleTexture);
+	}
 
 	isObstacle = true;
 }

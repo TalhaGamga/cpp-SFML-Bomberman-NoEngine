@@ -1,12 +1,11 @@
 #include "Wall.h"
 #include "Damageable.h"
+#include <random>
 
 Wall::Wall(sf::Vector2f pos, MapData* mapData) : MapObject(mapData)
 {
 	wallShape.setSize(mapData->gridSize - sf::Vector2f(2.0f, 2.0f));
 	wallShape.setOrigin(wallShape.getSize().x / 2, wallShape.getSize().y / 2);
-	wallShape.setFillColor(sf::Color(230, 200, 150));
-	wallShape.setOutlineColor(sf::Color::White);
 	SetPosition(pos);
 
 	wideCollider = new Collider(&wallShape);
@@ -20,6 +19,24 @@ Wall::Wall(sf::Vector2f pos, MapData* mapData) : MapObject(mapData)
 
 	mapData->AddToMapObjs(this);
 	mapData->AddToCollidables(this);
+
+
+	std::random_device rd;  // A random seed generator
+	std::mt19937 gen(rd()); // Mersenne Twister engine
+	std::uniform_int_distribution<int> distribution(0, 3); // Range: [0, 7]
+	// Generate a random number
+	int randomNumber = distribution(gen);
+	// Convert the random number to a string
+	std::string randomNumberString = std::to_string(randomNumber);
+	// Create the file path
+	std::string fileWay = "Assets/Sprites/block_0" + randomNumberString + ".png";
+
+	std::cout << fileWay << std::endl;
+
+	if (wallTexture.loadFromFile(fileWay))
+	{
+		wallShape.setTexture(&wallTexture);
+	}
 
 	isObstacle = true;
 }

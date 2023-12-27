@@ -1,3 +1,20 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SFML-GameDev-Learning.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  HealthBar.cpp
+  Bomb.cpp
+D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\Bomb.cpp(14,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\Bomb.cpp(15,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\Explosion.h(36,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
   SFML-GameDev-Learning.vcxproj -> D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\x64\Debug\SFMLBomberman.exe
