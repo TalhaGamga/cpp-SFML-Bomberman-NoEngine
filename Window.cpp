@@ -21,12 +21,12 @@ void Window::Setup(const std::string& title, const sf::Vector2u& size) {
 	isDone = false;
 	isFocused = true; // Default value for focused flag
 
-	bgColor = new sf::Color(128, 100, 70);
+	bgColor = new sf::Color(50, 50, 50);
 
-	//if (bgTexture.loadFromFile("Assets/Sprites/ground_03.png"))
-	//{
-	//	bgSprite.setTexture(bgTexture);
-	//}
+	if (bgTexture.loadFromFile("Assets/Sprites/ground.png"))
+	{
+		bgSprite.setTexture(bgTexture);
+	}
 
 	eventManager.AddCallback(StateType(0), "Fullscreen_toggle", &Window::ToggleFullScreen, this);
 	eventManager.AddCallback(StateType(0), "Window_close", &Window::Close, this);
@@ -67,7 +67,7 @@ void Window::Update() {
 }
 
 void Window::BeginDraw() {
-	window.clear(sf::Color::Black);
+	window.clear(*bgColor);
 	window.draw(bgSprite);
 }
 

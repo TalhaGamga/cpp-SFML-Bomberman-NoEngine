@@ -4,10 +4,14 @@ Explosion::Explosion(MapData* mapData, Direction2D direction, sf::Vector2f pos) 
 {
 
 	explosionShape = new sf::RectangleShape();
-	explosionShape->setFillColor(sf::Color(220, 20, 20));
 
 	explosionShape->setSize(sf::Vector2f(10.0f, 10.0f));
 	explosionShape->rotate(angleAxis[direction]);
+
+	if (explosionTexture.loadFromFile("Assets/Sprites/Flame.png"))
+	{
+		explosionShape->setTexture(&explosionTexture);
+	}
 
 	setPosition(pos);
 	explosionShape->setPosition(getPosition());
@@ -16,6 +20,8 @@ Explosion::Explosion(MapData* mapData, Direction2D direction, sf::Vector2f pos) 
 	wideCollider->BindOnCollisionEnter(this, &Explosion::onCollisionEnter);
 
 	mapData->AddToMapObjs(this);
+
+
 }
 
 void Explosion::Update()

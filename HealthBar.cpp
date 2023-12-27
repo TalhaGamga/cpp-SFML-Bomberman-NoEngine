@@ -3,18 +3,17 @@
 HealthBar::HealthBar(Damageable* damageable) :
 	bgSize(sf::Vector2f(50.0f, 8.0f)),
 	fgSize(sf::Vector2f(48.0f, 6.0f)),
-	fgOffset((backgroundBarShape.getSize().x - foregroundBarShape.getSize().x) / 2.0f)
+	fgOffset((bgSize.x - fgSize.x) / 2.0f)
 {
 	this->damageable = damageable;
 	backgroundBarShape.setFillColor(sf::Color::White);
-	foregroundBarShape.setFillColor(sf::Color::Red);
+	foregroundBarShape.setFillColor(sf::Color(0, 220, 0));
 
 	foregroundBarShape.setSize(fgSize);
 	backgroundBarShape.setSize(bgSize);
 
 	backgroundBarShape.setOrigin(sf::Vector2f(backgroundBarShape.getSize().x / 2.0f, backgroundBarShape.getSize().y / 2.0f));
 	foregroundBarShape.setOrigin(sf::Vector2f(0, foregroundBarShape.getSize().y / 2.0f));
-
 
 	damageable->BindOnTakingDamage(this, &HealthBar::SetHealthBar);
 }

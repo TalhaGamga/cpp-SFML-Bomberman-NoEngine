@@ -39,7 +39,7 @@ void Bomb::Update()
 void Bomb::Tick(sf::Time elapsed)
 {
 	timer -= elapsed.asSeconds();
-	if (timer < 0 && !isExploded)
+	if (!isExploded && timer < 0)
 	{
 		isExploded = true;
 

@@ -28,6 +28,7 @@ protected:
 private:
 	void Spread(sf::Time& elapsed);
 	sf::RectangleShape* explosionShape;
+	sf::Texture explosionTexture;
 	float damage;
 	bool isCollided = false;
 	float releaseTime = 5.0f;
