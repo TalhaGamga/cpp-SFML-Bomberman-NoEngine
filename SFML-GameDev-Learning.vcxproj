@@ -169,6 +169,8 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="PausedState.cpp" />
+    <ClCompile Include="SecondPlayer.cpp" />
+    <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -202,6 +204,8 @@
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="PausedState.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SecondPlayer.h" />
+    <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

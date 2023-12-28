@@ -15,7 +15,7 @@ namespace std {
 class FirstCharacter : public CharacterBase
 {
 public:
-	FirstCharacter(MapData* mapData);
+	FirstCharacter(MapData* mapData, std::string textureWay, sf::Vector2f initPos);
 	~FirstCharacter();
 
 	void Update() override;

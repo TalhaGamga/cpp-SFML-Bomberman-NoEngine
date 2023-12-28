@@ -3,7 +3,7 @@
 
 Player::Player(SharedContext* sharedContext, MapData* mapData) : sharedContext(sharedContext)
 {
-	character = new FirstCharacter(mapData);
+	character = new FirstCharacter(mapData, "Assets/Sprites/Ghost.png", sf::Vector2f(20.0f, 30.0f));
 
 	movementInput.emplace(Axis::Vertical, InputAxis2D
 	(DirectionInputState{ Direction2D::Up,0 },

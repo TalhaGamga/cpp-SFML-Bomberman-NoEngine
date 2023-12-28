@@ -4,18 +4,17 @@
 #include "Collidable.h"
 #include "Damageable.h"
 
-FirstCharacter::FirstCharacter(MapData* mapData) : CharacterBase(mapData), isBlocked(false), dropPos(0, 0)
+FirstCharacter::FirstCharacter(MapData* mapData, std::string textureWay, sf::Vector2f initPos) : CharacterBase(mapData), isBlocked(false), dropPos(0, 0)
 {
 	charShape = new sf::RectangleShape();
 	charShape->setSize(sf::Vector2f(40.0f, 40.0f));
 	charShape->setOrigin(charShape->getSize().x / 2, charShape->getSize().y / 2);
-	charShape->setFillColor(sf::Color::Yellow);
 
 	wideCollider = new Collider(charShape);
 
 	this->mapData = mapData;
 
-	setPosition(sf::Vector2f(20.0f, 20.0f));
+	setPosition(initPos);
 	charShape->setPosition(getPosition());
 
 	wideCollider->BindOnCollisionEnter(this, &FirstCharacter::onCollisionEnter);
@@ -28,7 +27,7 @@ FirstCharacter::FirstCharacter(MapData* mapData) : CharacterBase(mapData), isBlo
 	blockerColliderShape->setOrigin(blockerColliderShape->getSize().x / 2, blockerColliderShape->getSize().y / 2);
 	blockerColliderShape->setPosition(charShape->getPosition());
 
-	blockerColliderShape->setFillColor(sf::Color::Blue);
+	//blockerColliderShape->setFillColor(sf::Color::Blue);
 
 	blockerCollider = new Collider(blockerColliderShape);
 
@@ -43,6 +42,11 @@ FirstCharacter::FirstCharacter(MapData* mapData) : CharacterBase(mapData), isBlo
 	SetHp(100);
 
 	healthBar = new HealthBar(this);
+
+	if (charTexture.loadFromFile(textureWay))
+	{
+		charShape->setTexture(&charTexture);
+	}
 };
 
 FirstCharacter::~FirstCharacter()
@@ -109,7 +113,7 @@ void FirstCharacter::moveHealthBar()
 void FirstCharacter::draw(sf::RenderTarget& window, sf::RenderStates states) const
 {
 	window.draw(*charShape);
-	window.draw(*blockerColliderShape);
+	//window.draw(*blockerColliderShape);
 }
 
 void FirstCharacter::TakeDamage(float damage)

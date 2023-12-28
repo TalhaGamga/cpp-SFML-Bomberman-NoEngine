@@ -2,7 +2,7 @@
 #include "Wall.h"
 #include "Destructible.h"
 
-Map_1::Map_1(SharedContext* sharedContext) : player(sharedContext, &mapData)
+Map_1::Map_1(SharedContext* sharedContext) : player(sharedContext, &mapData), secondPlayer(sharedContext, &mapData)
 {
 	DefineTileMap();
 
@@ -39,11 +39,13 @@ void Map_1::LoadMap() {
 	}
 
 	player.Init();
+	secondPlayer.Init();
 }
 
 void Map_1::Update()
 {
 	player.Update();
+	secondPlayer.Update();
 
 	for (auto& mapObj : mapData.mapObjs)
 	{
@@ -85,13 +87,23 @@ void Map_1::CheckCollision()
 
 void Map_1::DefineTileMap()
 {
-	tileMap = {
+	/*tileMap = {
 		{0,0,1,2,0,1,1,2,2,0,1,0},
 		{0,1,1,0,0,1,0,1,2,0,1,2},
 		{1,0,2,0,1,2,2,0,1,0,0,1},
 		{1,1,0,1,2,0,0,2,1,1,0,0},
-		{2,1,2,2,1,2,1,1,1,1,2,2},
+		{2,1,2,2,1,2,1,1,2,1,2,2},
 		{0,1,1,0,0,1,2,0,1,2,0,1},
-		{1,1,1,0,1,2,0,1,2,0,1,2},
-		{0,1,1,0,2,1,2,0,2,1,2,0} };
+		{1,1,1,0,1,2,0,1,1,1,0,2},
+		{0,1,1,0,2,1,2,0,2,1,0,0} };*/
+
+	tileMap = {
+		{0,0,0,2,0,1,1,2,2,0,1,0},
+		{0,0,1,0,0,1,0,1,2,0,1,2},
+		{0,0,2,0,1,0,0,0,1,0,0,1},
+		{1,1,0,1,0,0,0,0,1,1,0,0},
+		{2,1,0,0,1,0,1,0,0,1,2,2},
+		{0,1,1,0,0,1,2,0,1,0,0,1},
+		{1,1,1,0,1,0,0,1,0,0,0,2},
+		{0,1,1,0,2,1,0,0,0,1,0,0} };
 }

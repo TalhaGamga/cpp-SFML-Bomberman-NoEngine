@@ -3,6 +3,7 @@
 #include "Wall.h"
 #include "Player.h"
 #include "Collidable.h"
+#include "SecondPlayer.h"
 
 class Map_1 : public Map
 {
@@ -20,4 +21,5 @@ protected:
 
 private:
 	Player player;
+	SecondPlayer secondPlayer;
 };
