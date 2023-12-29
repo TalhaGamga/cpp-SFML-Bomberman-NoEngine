@@ -12,6 +12,7 @@ namespace std {
 	};
 }
 
+
 class FirstCharacter : public CharacterBase
 {
 public:

@@ -1,5 +1,5 @@
 #include "FirstCharacter.h"
-#include "GameStateManager.h" 
+#include "GameStateManager.h"
 #include "Map.h"
 #include "Collidable.h"
 #include "Damageable.h"
@@ -26,8 +26,6 @@ FirstCharacter::FirstCharacter(MapData* mapData, std::string textureWay, sf::Vec
 	blockerColliderShape = new sf::RectangleShape(charShape->getSize() - sf::Vector2f(2.0f, 2.0f));
 	blockerColliderShape->setOrigin(blockerColliderShape->getSize().x / 2, blockerColliderShape->getSize().y / 2);
 	blockerColliderShape->setPosition(charShape->getPosition());
-
-	//blockerColliderShape->setFillColor(sf::Color::Blue);
 
 	blockerCollider = new Collider(blockerColliderShape);
 
@@ -113,7 +111,6 @@ void FirstCharacter::moveHealthBar()
 void FirstCharacter::draw(sf::RenderTarget& window, sf::RenderStates states) const
 {
 	window.draw(*charShape);
-	//window.draw(*blockerColliderShape);
 }
 
 void FirstCharacter::TakeDamage(float damage)
@@ -128,8 +125,8 @@ void FirstCharacter::TakeDamage(float damage)
 	printf("%f\n", currentHp);
 	if (currentHp <= 0)
 	{
-		mapData->RemoveFromMapObjs(this);
-		mapData->RemoveFromCollidables(this);
+		onCharacterDied();
+		charShape->setFillColor(sf::Color::Red);
 	}
 }
 
@@ -140,15 +137,11 @@ void FirstCharacter::SetMovementDirection(sf::Vector2i direction)
 
 void FirstCharacter::onCollisionEnter(Collidable* other)
 {
-	//printf("character onCollision Enter");
 }
-
 
 void FirstCharacter::onCollisionExit(Collidable* other)
 {
-	//printf("character onCollision Exit");
 }
-
 
 void FirstCharacter::Render(sf::RenderWindow* window)
 {
@@ -162,29 +155,15 @@ void FirstCharacter::DropBomb()
 	bomb = new Bomb(dropPos, mapData, this);
 }
 
-void FirstCharacter::moveUp(sf::Time elapsed)
-{
-	//std::cout << "Move Up" << std::endl;
-}
+void FirstCharacter::moveUp(sf::Time elapsed) {}
 
-void FirstCharacter::moveDown(sf::Time elapsed)
-{
-	//std::cout << "Move Down" << std::endl;
-}
+void FirstCharacter::moveDown(sf::Time elapsed) {}
 
-void FirstCharacter::moveRight(sf::Time elapsed)
-{
-	//std::cout << "Move Right" << std::endl;
-}
+void FirstCharacter::moveRight(sf::Time elapsed) {}
 
-void FirstCharacter::moveLeft(sf::Time elapsed)
-{
-	//std::cout << "Move Left" << std::endl;
-}
+void FirstCharacter::moveLeft(sf::Time elapsed) {}
 
-void FirstCharacter::idle(sf::Time elapsed) {
-	//std::cout << "Idle" << std::endl;
-}
+void FirstCharacter::idle(sf::Time elapsed) {}
 
 void FirstCharacter::CheckCollision()
 {

@@ -12,6 +12,8 @@ struct SharedContext {
 	SharedContext() : window(nullptr), eventManager(nullptr) {}
 	Window* window;
 	EventManager* eventManager;
+
+	std::function<void(const StateType&)> SwitchState;
 };
 
 enum class StateType {
@@ -19,7 +21,7 @@ enum class StateType {
 	MainMenu,
 	Play,
 	Paused,
-	GameOver,
+	GameEnd,
 	Credits
 };
 

@@ -44,6 +44,8 @@ private:
 	void removeInputCallbacks();
 	void SetMovementDirection();
 
+	void onCharacterdied();
+
 	bool isPressedUpward = false;
 	bool isPressedDownward = false;
 	bool isPressedRight = false;

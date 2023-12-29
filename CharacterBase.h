@@ -13,6 +13,8 @@
 
 class Bomb;
 
+using OnCharacterDied = std::function<void()>;
+
 class CharacterBase : public MapObject, public Collidable, public Damageable
 {
 public:
@@ -22,6 +24,8 @@ public:
 
 	virtual void SetMovementDirection(sf::Vector2i direction) = 0;
 	virtual void DropBomb() = 0;
+
+	OnCharacterDied onCharacterDied;
 
 protected:
 	sf::RectangleShape* charShape;

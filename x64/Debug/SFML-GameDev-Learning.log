@@ -1,18 +1,13 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SFML-GameDev-Learning.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Player.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+  CreditsState.cpp
+D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\CreditsState.cpp(13,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Ty=int
+              T=unsigned int
           ]
-          and
-          [
-              _Ty2=float
-          ]
-D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\Explosion.h(37,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\CreditsState.cpp(14,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
-              _Other1=Direction2D,
-              _Other2=int
+              T=unsigned int
           ]
   SFML-GameDev-Learning.vcxproj -> D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\x64\Debug\SFMLBomberman.exe

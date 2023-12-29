@@ -12,6 +12,8 @@ SecondPlayer::SecondPlayer(SharedContext* sharedContext, MapData* mapData) :shar
 	movementInput.emplace(Axis::Horizontal, InputAxis2D
 	(DirectionInputState{ Direction2D::Right,0 },
 		DirectionInputState{ Direction2D::Left,0 }));
+
+	character->onCharacterDied = std::bind(&SecondPlayer::onCharacterdied, this);
 }
 
 SecondPlayer::~SecondPlayer()
@@ -131,4 +133,8 @@ void SecondPlayer::SetMovementDirection()
 	movementDirection.y = movementInput[Axis::Vertical].positiveInputState.second + movementInput[Axis::Vertical].negativeInputState.second;
 
 	character->SetMovementDirection(movementDirection);
+}
+void SecondPlayer::onCharacterdied()
+{
+	sharedContext->SwitchState(StateType::GameEnd);
 }

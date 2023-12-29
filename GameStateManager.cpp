@@ -3,8 +3,13 @@
 #include "MainMenuState.h"
 #include "PlayState.h"
 #include "PausedState.h"
+#include "GameEndState.h"
+#include "CreditsState.h"
 
-GameStateManager::GameStateManager(SharedContext* sharedContext) : sharedContext(sharedContext) {}
+GameStateManager::GameStateManager(SharedContext* sharedContext) : sharedContext(sharedContext)
+{
+	sharedContext->SwitchState = std::bind(&GameStateManager::SwitchTo, this, std::placeholders::_1);
+}
 
 GameStateManager::~GameStateManager() {
 	for (auto& itr : states)
@@ -23,6 +28,8 @@ void GameStateManager::Init()
 	registerState<MainMenuState>(StateType::MainMenu);
 	registerState<PlayState>(StateType::Play);
 	registerState<PausedState>(StateType::Paused);
+	registerState<GameEndState>(StateType::GameEnd);
+	registerState<CreditsState>(StateType::Credits);
 
 	SwitchTo(StateType::Intro);
 }

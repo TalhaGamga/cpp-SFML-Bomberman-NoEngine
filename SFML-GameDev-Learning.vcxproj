@@ -149,6 +149,7 @@
     <ClCompile Include="CharacterBase.cpp" />
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="CreditsState.cpp" />
     <ClCompile Include="Damageable.cpp" />
     <ClCompile Include="Destructible.cpp" />
     <ClCompile Include="Enums.cpp" />
@@ -156,7 +157,7 @@
     <ClCompile Include="FirstCharacter.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameOverState.cpp" />
+    <ClCompile Include="GameEndState.cpp" />
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="Level_1.cpp" />
@@ -180,11 +181,12 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Collidable.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="CreditsState.h" />
     <ClInclude Include="Damageable.h" />
     <ClInclude Include="Destructible.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Explosion.h" />
-    <ClInclude Include="GameOverState.h" />
+    <ClInclude Include="GameEndState.h" />
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="IClickable.h" />
     <ClInclude Include="FirstCharacter.h" />

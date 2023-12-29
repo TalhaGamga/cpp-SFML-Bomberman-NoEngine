@@ -18,12 +18,11 @@ void MainMenuState::OnCreate()
 	buttonPos = sf::Vector2f(windowSizeX / 2, windowSizeY / 2);
 	buttonPadding = 4;
 
-	std::string str[3];
+	std::string str[2];
 	str[0] = "PLAY";
-	str[1] = "CREDITS";
-	str[2] = "EXIT";
+	str[1] = "EXIT";
 
-	for (int i = 0; i < 3; ++i) {
+	for (int i = 0; i < 2; ++i) {
 		sf::Vector2f buttonPosition(buttonPos.x, buttonPos.y + (i * (buttonSize.y + buttonPadding)));
 
 		rects[i].setSize(buttonSize);
@@ -89,7 +88,7 @@ void MainMenuState::Draw() //Button's draws
 	sf::RenderWindow* window = stateManager->GetContext()->window->GetRenderWindow();
 
 	window->draw(text);
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < 2; ++i)
 	{
 		window->draw(rects[i]);
 		window->draw(labels[i]);
@@ -114,11 +113,7 @@ void MainMenuState::MouseClick(EventDetails* details)
 				stateManager->SwitchTo(StateType::Play);
 			}
 
-			else if (i == 1) {
-				// Credits state.
-			}
-
-			else if (i == 2)
+			else if (i == 1)
 			{
 				stateManager->GetContext()->window->Close();
 			}

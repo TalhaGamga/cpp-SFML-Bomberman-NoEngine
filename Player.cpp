@@ -12,6 +12,8 @@ Player::Player(SharedContext* sharedContext, MapData* mapData) : sharedContext(s
 	movementInput.emplace(Axis::Horizontal, InputAxis2D
 	(DirectionInputState{ Direction2D::Right,0 },
 		DirectionInputState{ Direction2D::Left,0 }));
+
+	character->onCharacterDied = std::bind(&Player::onCharacterdied, this);
 }
 
 Player::~Player()
@@ -137,6 +139,11 @@ void Player::SetMovementDirection()
 	character->SetMovementDirection(movementDirection);
 }
 
+void Player::onCharacterdied()
+{
+	sharedContext->SwitchState(StateType::GameEnd);
+}
+
 /*
 In C++, if we do not define a default constructor, the compiler generates
 a default constructor. However if we define a custom constructor then the
@@ -145,3 +152,4 @@ compiler no longer generates a default constructor.
 InputAxis2D::InputAxis2D()
 {
 }
+
