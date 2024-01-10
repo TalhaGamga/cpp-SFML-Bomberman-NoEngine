@@ -51,5 +51,7 @@ Murathan Karakaya - 21050151024
 
 •	Damageable system implementation
 
-Project Collaboration
+
+• PROJECT COLLABORATIONS
+
 Our team fostered effective collaboration by allocating tasks based on each member's strengths and encouraging mutual assistance across various project components. The breakdown of responsibilities resulted in a harmonious and successful team effort.
