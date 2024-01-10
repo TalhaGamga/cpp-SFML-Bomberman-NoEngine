@@ -1,5 +1,12 @@
 SFML Bomberman Project
 ---------------------
+
+!!!!
+EXE files are in x64, Playing release build is recommended.
+index file is in HTML folder
+!!!
+-
+
 Gameplay 🎮
 -
 Player 1
