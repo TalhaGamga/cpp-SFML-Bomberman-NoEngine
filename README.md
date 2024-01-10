@@ -3,15 +3,21 @@ SFML Bomberman Project
 Gameplay
 -
 Player 1
+
 🎮 Arrow keys - Movement
+
 🎮 Space - Drop Bomb
 
 Player 2
+
 🎮 W A S D - Movement
+
 🎮 Left Shift - Drop Bomb
 
 General Game Controls:
+
 🎮 Pause: P
+
 🎮 Menu: ESC
 
 
