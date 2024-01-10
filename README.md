@@ -55,14 +55,3 @@ Murathan Karakaya - 21050151024
 
 Project Collaboration
 Our team fostered effective collaboration by allocating tasks based on each member's strengths and encouraging mutual assistance across various project components. The breakdown of responsibilities resulted in a harmonious and successful team effort.
-Highlights:
-•	Talha Ubeydullah Gamga: Led project management, version control, and OOP architecture.
-
-•	Muhammed Fatih Asan: Contributed to game mechanics design and implemented the health bar system.
-
-•	Selçuk Üstün: Showcased skills in graphic design, graph implementation, level design and helping general project management.
-
-•	Buğra Bildiren: Managed game states and implemented base, intro, menu, play, and paused states, along with transitions.
-
-•	Murathan Karakaya: Provided class diagrams, implemented the main loop, and worked on the damageable system.
-
