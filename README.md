@@ -1,24 +1,24 @@
 SFML Bomberman Project
 ---------------------
-Gameplay
+Gameplay 🎮
 -
 Player 1
 
-🎮 Arrow keys - Movement
+Arrow keys - Movement
 
-🎮 Space - Drop Bomb
+Space - Drop Bomb
 
 Player 2
 
-🎮 W A S D - Movement
+W A S D - Movement
 
-🎮 Left Shift - Drop Bomb
+Left Shift - Drop Bomb
 
 General Game Controls:
 
-🎮 Pause: P
+Pause: P
 
-🎮 Menu: ESC
+Menu: ESC
 
 
 This collaborative Bomberman project showcases the combined efforts and expertise of the following team members:
