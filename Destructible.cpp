@@ -4,7 +4,7 @@
 Destructible::Destructible(sf::Vector2f pos, MapData* mapData) : MapObject(mapData)
 {
 	// Set initial health points
-	initialHp = 80;
+	initialHp = 40;
 
 	// Set size and origin of the destructible shape
 	destructibleShape.setSize(mapData->gridSize - sf::Vector2f(2.0f, 2.0f));

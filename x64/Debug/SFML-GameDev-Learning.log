@@ -1,13 +1,232 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SFML-GameDev-Learning.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Bomb.cpp
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Bomb.cpp(18,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Bomb.cpp(19,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  CharacterBase.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  Collidable.cpp
+  Collider.cpp
   CreditsState.cpp
-D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\CreditsState.cpp(13,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\CreditsState.cpp(14,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\CreditsState.cpp(14,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\CreditsState.cpp(15,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-  SFML-GameDev-Learning.vcxproj -> D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\x64\Debug\SFMLBomberman.exe
+  Damageable.cpp
+  Destructible.cpp
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Destructible.cpp(49,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Explosion.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(62,21): message : see the first reference to 'std::pair<const Direction2D,float>::pair' in 'Explosion::Explosion'
+  FirstCharacter.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  EventManager.cpp
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\EventManager.cpp(230,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Game.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  GameEndState.cpp
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\GameEndState.cpp(15,23): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\GameEndState.cpp(16,23): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  HealthBar.cpp
+  LevelManager.cpp
+  Level_1.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  MapObject.cpp
+  Map_1.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  Player.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  PlayState.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  Generating Code...
+  Compiling...
+  IntroState.cpp
+  MainMenuState.cpp
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\MainMenuState.cpp(18,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\MainMenuState.cpp(19,20): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  GameStateManager.cpp
+  PausedState.cpp
+  SecondPlayer.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\Explosion.h(63,3): message : see reference to function template instantiation 'std::pair<const Direction2D,float>::pair<Direction2D,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=Direction2D,
+              _Other2=int
+          ]
+  Wall.cpp
+  Window.cpp
+  Generating Code...
+  SFML-GameDev-Learning.vcxproj -> D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\x64\Debug\SFMLBomberman.exe
