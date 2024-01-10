@@ -34,9 +34,13 @@ Selçuk Üstün - 20050111072
 •	Helping implementations and headers
 
 Buğra Bildiren - 20050111022
+
 •	Game state manager
+
 •	Base state, intro state, menu state, play state, paused state implementation
+
 •	State transitions
+
 •	Helping implementations and headers
 
 Murathan Karakaya - 21050151024
