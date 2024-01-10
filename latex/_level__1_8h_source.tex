@@ -1,0 +1,35 @@
+\doxysection{Level\+\_\+1.\+h}
+\hypertarget{_level__1_8h_source}{}\label{_level__1_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Level.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Map\_1.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Class\ representing\ Level\ 1\ of\ the\ game.}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level__1}{Level\_1}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_level}{Level}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ the\ shared\ context.}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_level__1}{Level\_1}}(\mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ sharedContext);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Start\ the\ level.}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ StartLevel()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ End\ the\ level.}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ EndLevel()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ level.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ called\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Load\ the\ map\ specific\ to\ Level\ 1.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ loadMap()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \};}
+
+\end{DoxyCode}

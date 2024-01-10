@@ -1,16 +1,21 @@
 #include "Game.h"
 #include <iostream>
-#include "Button.h"
 
-int  main()
+int main()
 {
-	Game game; // Creating our game object
+	// Create a Game instance
+	Game game;
 
+	// Main game loop
 	while (!game.GetWindow()->IsDone())
 	{
-		//Game loop	
+		// Update game logic
 		game.Update();
+
+		// Render the game
 		game.Render();
+
+		// Perform late updates
 		game.LateUpdate();
 	}
 

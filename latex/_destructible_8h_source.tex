@@ -1,0 +1,61 @@
+\doxysection{Destructible.\+h}
+\hypertarget{_destructible_8h_source}{}\label{_destructible_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Collidable.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Damageable.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Class\ representing\ a\ destructible\ object\ in\ the\ game.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_destructible}{Destructible}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_map_object}{MapObject}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collidable}{Collidable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_damageable}{Damageable}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ position\ and\ map\ data.}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_destructible}{Destructible}}(sf::Vector2f\ pos,\ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ called\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ destructible\ object.}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Abstract\ method\ for\ drawing\ the\ destructible\ object.}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(sf::RenderTarget\&\ window,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Method\ for\ taking\ damage.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ TakeDamage(\textcolor{keywordtype}{float}\ damage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ position\ of\ the\ destructible\ object.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ SetPosition(sf::Vector2f\ pos);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ collisions\ with\ other\ collidable\ objects.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckCollision()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ a\ collision\ with\ another\ collidable\ object\ occurs.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionEnter(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ collision\ with\ another\ collidable\ object\ ends.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionExit(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Shape\ representing\ the\ destructible\ object.}}
+\DoxyCodeLine{00043\ \ \ \ \ sf::RectangleShape\ destructibleShape;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Texture\ for\ the\ destructible\ object.}}
+\DoxyCodeLine{00046\ \ \ \ \ sf::Texture\ destructibleTexture;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Time\ during\ which\ damage\ affects\ the\ object.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ damageAffectTime\ =\ 1;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ object\ is\ currently\ damaged.}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDamaged\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Represents\ red\ of\ rpg\ color\ }}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ 215.0f;}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

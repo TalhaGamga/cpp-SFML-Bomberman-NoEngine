@@ -1,0 +1,87 @@
+\doxysection{Base\+State.\+h}
+\hypertarget{_base_state_8h_source}{}\label{_base_state_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/System/Time.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EventManager.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Window.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Forward\ declaration\ of\ GameStateManager\ class\ to\ avoid\ circular\ dependencies}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_state_manager}{GameStateManager}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ BaseState\ class\ serves\ as\ the\ virtual\ base\ class\ for\ different\ game\ states}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_base_state}{BaseState}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ A\ friend\ class\ can\ access\ private\ and\ protected\ members\ of\ other\ classes}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_state_manager}{GameStateManager}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Constructor:\ Initializes\ the\ BaseState\ with\ a\ pointer\ to\ the\ GameStateManager}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_base_state}{BaseState}}(\mbox{\hyperlink{class_game_state_manager}{GameStateManager}}*\ stateManager)\ :}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ stateManager(stateManager),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ isTransparent(\textcolor{keyword}{false}),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ isTranscendent(\textcolor{keyword}{false})}
+\DoxyCodeLine{00021\ \ \ \ \ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Virtual\ destructor\ to\ ensure\ proper\ cleanup\ in\ derived\ classes}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_state}{\string~BaseState}}()\ \{\}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Pure\ virtual\ functions\ to\ be\ implemented\ by\ derived\ classes}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnCreate()\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnDestroy()\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Input-\/related\ functions\ to\ be\ implemented\ by\ derived\ classes}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ AddInputCallbacks()\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RemoveInputCallbacks()\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Activation\ and\ deactivation\ functions\ to\ manage\ state\ transitions}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Activate()\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Deactivate()\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Update\ and\ tick\ functions\ for\ state-\/specific\ logic\ and\ time-\/based\ actions}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Update()\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tick(\textcolor{keyword}{const}\ sf::Time\&\ time)\ =\ 0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Draw\ function\ for\ rendering\ the\ state}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw()\ =\ 0;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Setters\ and\ getters\ for\ transparency\ and\ transcendence\ flags}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ SetTransparent(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ transparent)}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ this-\/>isTransparent\ =\ transparent;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsTransparent()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isTransparent;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ SetTranscendent(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ transcendence)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ this-\/>isTranscendent\ =\ transcendence;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsTranscendent()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isTranscendent;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Getter\ for\ the\ GameStateManager\ pointer}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_game_state_manager}{GameStateManager}}*\ GetStateManager()}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stateManager;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ GameStateManager\ for\ state\ management}}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_game_state_manager}{GameStateManager}}*\ stateManager;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ isTransparent\ and\ isTranscendent\ flags\ indicate\ if\ this\ state}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ also\ needs\ to\ render\ or\ update\ a\ state\ that\ came\ before\ it.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTransparent;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTranscendent;}
+\DoxyCodeLine{00082\ \};}
+
+\end{DoxyCode}

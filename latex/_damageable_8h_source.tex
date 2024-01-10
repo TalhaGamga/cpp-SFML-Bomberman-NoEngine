@@ -1,0 +1,47 @@
+\doxysection{Damageable.\+h}
+\hypertarget{_damageable_8h_source}{}\label{_damageable_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Type\ alias\ for\ a\ vector\ of\ functions\ to\ be\ called\ when\ taking\ damage\ events\ occur.}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ }OnTakingDamage\ =\ std::vector<std::function<void()>>;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Interface\ for\ objects\ that\ can\ take\ damage.}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_damageable}{Damageable}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Abstract\ method\ for\ taking\ damage.}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TakeDamage(\textcolor{keywordtype}{float}\ damage)\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Sets\ the\ initial\ and\ current\ health\ points.}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ SetHp(\textcolor{keywordtype}{float}\ initialHp);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ object\ has\ died.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDied\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Binds\ a\ member\ function\ to\ the\ taking\ damage\ event.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ BindOnTakingDamage(T*\ instance,\ \textcolor{keywordtype}{void}\ (T::*\ method)())\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ onTakingDamage.push\_back(std::bind(method,\ instance));}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ initial\ health\ points.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ getInitialHp();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ current\ health\ points.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ getCurrentHp();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Initial\ health\ points.}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ initialHp;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Current\ health\ points.}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ currentHp;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Vector\ of\ functions\ to\ be\ called\ when\ taking\ damage\ events\ occur.}}
+\DoxyCodeLine{00041\ \ \ \ \ OnTakingDamage\ onTakingDamage;}
+\DoxyCodeLine{00042\ \};}
+
+\end{DoxyCode}

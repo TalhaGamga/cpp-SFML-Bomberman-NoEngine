@@ -1,0 +1,54 @@
+\doxysection{Bomb.\+h}
+\hypertarget{_bomb_8h_source}{}\label{_bomb_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include"{}Collidable.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Explosion.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CharacterBase.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_character_base}{CharacterBase}};\ \textcolor{comment}{//\ Forward\ declaration\ of\ CharacterBase\ class}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Bomb\ class,\ representing\ a\ bomb\ object\ in\ the\ Bomberman\ game}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bomb}{Bomb}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_map_object}{MapObject}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collidable}{Collidable}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Constructor:\ Initializes\ the\ Bomb\ object\ with\ a\ position,\ MapData,\ and\ the\ CharacterBase\ who\ dropped\ it}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_bomb}{Bomb}}(sf::Vector2f\ position,\ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData,\ \mbox{\hyperlink{class_character_base}{CharacterBase}}*\ dropper);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Update\ function\ for\ handling\ bomb\ logic}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Tick\ function\ for\ time-\/based\ actions}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Render\ function\ for\ rendering\ the\ bomb\ on\ a\ window}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ SFML\ draw\ function\ for\ rendering\ the\ bomb}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(sf::RenderTarget\&\ window,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Getter\ for\ the\ dropper\ of\ the\ bomb}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_character_base}{CharacterBase}}*\ GetDropper();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ collisions\ with\ other\ objects}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckCollision()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Collision\ enter\ callback\ function}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionEnter(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Collision\ exit\ callback\ function}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionExit(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ sf::RectangleShape\ bombShape;\ \textcolor{comment}{//\ Shape\ representing\ the\ bomb}}
+\DoxyCodeLine{00045\ \ \ \ \ sf::Texture\ bombTexture;\ \ \ \ \ \ \textcolor{comment}{//\ Texture\ for\ the\ bomb}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ isExploded;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ whether\ the\ bomb\ has\ exploded}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ timer\ =\ 10;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Timer\ for\ bomb\ countdown}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_character_base}{CharacterBase}}*\ dropper;\ \ \ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ CharacterBase\ who\ dropped\ the\ bomb}}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

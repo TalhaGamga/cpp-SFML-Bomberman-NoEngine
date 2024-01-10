@@ -4,90 +4,92 @@
 
 Wall::Wall(sf::Vector2f pos, MapData* mapData) : MapObject(mapData)
 {
-	wallShape.setSize(mapData->gridSize - sf::Vector2f(2.0f, 2.0f));
-	wallShape.setOrigin(wallShape.getSize().x / 2, wallShape.getSize().y / 2);
-	SetPosition(pos);
+    // Initialize wall shape and properties
+    wallShape.setSize(mapData->gridSize - sf::Vector2f(2.0f, 2.0f));
+    wallShape.setOrigin(wallShape.getSize().x / 2, wallShape.getSize().y / 2);
+    SetPosition(pos);
 
-	wideCollider = new Collider(&wallShape);
+    // Create a collider for collision detection
+    wideCollider = new Collider(&wallShape);
 
-	isObstacle = true;
+    // Set the collider as an obstacle
+    isObstacle = true;
 
-	this->mapData = mapData;
+    // Bind collision callbacks
+    wideCollider->BindOnCollisionEnter(this, &Wall::onCollisionEnter);
+    wideCollider->BindOnCollisionExit(this, &Wall::onCollisionExit);
 
-	wideCollider->BindOnCollisionEnter(this, &Wall::onCollisionEnter);
-	wideCollider->BindOnCollisionExit(this, &Wall::onCollisionExit);
+    // Add the wall to the map objects and collidables
+    mapData->AddToMapObjs(this);
+    mapData->AddToCollidables(this);
 
-	mapData->AddToMapObjs(this);
-	mapData->AddToCollidables(this);
+    // Load wall texture if available
+    if (wallTexture.loadFromFile("Assets/Sprites/block_04.png"))
+    {
+        wallShape.setTexture(&wallTexture);
+    }
 
-
-	std::random_device rd;  // A random seed generator
-	std::mt19937 gen(rd()); // Mersenne Twister engine
-	std::uniform_int_distribution<int> distribution(0, 3); // Range: [0, 7]
-	// Generate a random number
-	int randomNumber = distribution(gen);
-	// Convert the random number to a string
-	std::string randomNumberString = std::to_string(randomNumber);
-	// Create the file path
-	std::string fileWay = "Assets/Sprites/block_0" + randomNumberString + ".png";
-
-	std::cout << fileWay << std::endl;
-
-	if (wallTexture.loadFromFile(fileWay))
-	{
-		wallShape.setTexture(&wallTexture);
-	}
-
-	isObstacle = true;
+    // Set the wall as an obstacle
+    isObstacle = true;
 }
 
 Wall::~Wall()
 {
+    // Destructor for Wall class
 }
 
 void Wall::Update()
 {
+    // Update function for Wall class
 }
 
 void Wall::Tick(sf::Time elapsed)
 {
+    // Tick function for Wall class
 }
 
 void Wall::Render(sf::RenderWindow* window)
 {
-	window->draw(*this);
+    // Render the wall shape
+    window->draw(*this);
 }
 
 void Wall::SetPosition(sf::Vector2f pos)
 {
-	setPosition(pos);
-	wallShape.setPosition(pos);
+    // Set the position of the wall shape
+    setPosition(pos);
+    wallShape.setPosition(pos);
 }
 
 void Wall::Attack(Collidable* other)
 {
-	//printf("Attack\n");
-	if (Damageable* otherDamageable = dynamic_cast<Damageable*>(other))
-	{
-		otherDamageable->TakeDamage(10);
-	}
+    // Attack function for Wall class
+    // Check if the other collidable is damageable and apply damage
+    if (Damageable* otherDamageable = dynamic_cast<Damageable*>(other))
+    {
+        otherDamageable->TakeDamage(10);
+    }
 }
 
 void Wall::CheckCollision()
 {
+    // Check collision function for Wall class
 }
 
 void Wall::onCollisionEnter(Collidable* other)
 {
-	//
+    // Callback when a collision with another collidable begins
+    // No additional action in this case
 }
 
 void Wall::onCollisionExit(Collidable* other)
 {
-	//
+    // Callback when a collision with another collidable ends
+    // No additional action in this case
 }
 
 void Wall::draw(sf::RenderTarget& window, sf::RenderStates states) const
 {
-	window.draw(wallShape);
+    // Draw the wall shape
+    window.draw(wallShape);
 }

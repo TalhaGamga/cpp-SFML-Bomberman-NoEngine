@@ -1,0 +1,71 @@
+\doxysection{Credits\+State.\+h}
+\hypertarget{_credits_state_8h_source}{}\label{_credits_state_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BaseState.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameStateManager.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Class\ representing\ the\ credits\ state\ in\ the\ game.}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_credits_state}{CreditsState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_state}{BaseState}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ the\ game\ state\ manager.}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_credits_state}{CreditsState}}(\mbox{\hyperlink{class_game_state_manager}{GameStateManager}}*\ stateManager)\ :\ \mbox{\hyperlink{class_base_state}{BaseState}}(stateManager)\ \{\}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_credits_state}{\string~CreditsState}}()\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ state\ is\ created.}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ OnCreate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ state\ is\ destroyed.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ OnDestroy()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Adds\ input\ callbacks\ for\ the\ state.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ AddInputCallbacks()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Removes\ input\ callbacks\ for\ the\ state.}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveInputCallbacks()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Activates\ the\ state.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ Activate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Deactivates\ the\ state.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ Deactivate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ state.}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Ticks\ the\ state\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \ Tick(\textcolor{keyword}{const}\ sf::Time\&\ time)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Draws\ the\ state.}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Callback\ function\ for\ handling\ mouse\ clicks.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ MouseClick(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Text\ object\ for\ displaying\ credits\ information.}}
+\DoxyCodeLine{00047\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ rectangles\ used\ for\ visual\ separation\ in\ the\ display.}}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Vector2f\ rectSize;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Position\ of\ rectangles\ in\ the\ display.}}
+\DoxyCodeLine{00053\ \ \ \ \ sf::Vector2f\ rectPos;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Padding\ between\ rectangles.}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ rectPadding;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Font\ used\ for\ text\ rendering.}}
+\DoxyCodeLine{00059\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Array\ of\ rectangle\ shapes\ for\ visual\ separation.}}
+\DoxyCodeLine{00062\ \ \ \ \ sf::RectangleShape\ rects[6];}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Array\ of\ text\ labels\ for\ displaying\ credits\ information.}}
+\DoxyCodeLine{00065\ \ \ \ \ sf::Text\ labels[6];}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

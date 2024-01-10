@@ -1,0 +1,180 @@
+\doxysection{Play\+State Class Reference}
+\hypertarget{class_play_state}{}\label{class_play_state}\index{PlayState@{PlayState}}
+Inheritance diagram for Play\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_play_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_play_state_a0eac71dde0aaf7daa469246d66b5e68e}\label{class_play_state_a0eac71dde0aaf7daa469246d66b5e68e} 
+{\bfseries Play\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_play_state_a255722082be956163650ce63c7922033}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_a692864f9d05d4d245d0f640bc2d39327}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_a5b5a95c05bc12a5a99dbfb94cac82128}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_abed0e87f82a17f3643772a5c1338eba2}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_a4820a7b019fa83809377344c1c89d668}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_aed860540b69881cf40ef95466ee4947f}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_ac01781c38e51d0c6e73dcfa4215dfcea}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_play_state_a9fd570ebed87cfa633b9b3b5adb43e41}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_play_state_abe605863ddba857fa68564a2fadab111}{Draw}} () override
+\item 
+\Hypertarget{class_play_state_ad700a122370c32331b4c19be1cca5bba}\label{class_play_state_ad700a122370c32331b4c19be1cca5bba} 
+void {\bfseries Main\+Menu} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\item 
+\Hypertarget{class_play_state_a787bcf6c06ab6f5c61178471604dd513}\label{class_play_state_a787bcf6c06ab6f5c61178471604dd513} 
+void {\bfseries Pause} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_play_state_a4820a7b019fa83809377344c1c89d668}\label{class_play_state_a4820a7b019fa83809377344c1c89d668} 
+\index{PlayState@{PlayState}!Activate@{Activate}}
+\index{Activate@{Activate}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_a5b5a95c05bc12a5a99dbfb94cac82128}\label{class_play_state_a5b5a95c05bc12a5a99dbfb94cac82128} 
+\index{PlayState@{PlayState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_aed860540b69881cf40ef95466ee4947f}\label{class_play_state_aed860540b69881cf40ef95466ee4947f} 
+\index{PlayState@{PlayState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_abe605863ddba857fa68564a2fadab111}\label{class_play_state_abe605863ddba857fa68564a2fadab111} 
+\index{PlayState@{PlayState}!Draw@{Draw}}
+\index{Draw@{Draw}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_a255722082be956163650ce63c7922033}\label{class_play_state_a255722082be956163650ce63c7922033} 
+\index{PlayState@{PlayState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Play\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_a692864f9d05d4d245d0f640bc2d39327}\label{class_play_state_a692864f9d05d4d245d0f640bc2d39327} 
+\index{PlayState@{PlayState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Play\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_abed0e87f82a17f3643772a5c1338eba2}\label{class_play_state_abed0e87f82a17f3643772a5c1338eba2} 
+\index{PlayState@{PlayState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_a9fd570ebed87cfa633b9b3b5adb43e41}\label{class_play_state_a9fd570ebed87cfa633b9b3b5adb43e41} 
+\index{PlayState@{PlayState}!Tick@{Tick}}
+\index{Tick@{Tick}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_play_state_ac01781c38e51d0c6e73dcfa4215dfcea}\label{class_play_state_ac01781c38e51d0c6e73dcfa4215dfcea} 
+\index{PlayState@{PlayState}!Update@{Update}}
+\index{Update@{Update}!PlayState@{PlayState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Play\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Play\+State.\+h\item 
+Play\+State.\+cpp\end{DoxyCompactItemize}

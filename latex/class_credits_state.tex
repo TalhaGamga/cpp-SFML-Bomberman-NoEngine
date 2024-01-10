@@ -1,0 +1,174 @@
+\doxysection{Credits\+State Class Reference}
+\hypertarget{class_credits_state}{}\label{class_credits_state}\index{CreditsState@{CreditsState}}
+Inheritance diagram for Credits\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_credits_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_credits_state_a012ea95f3fadc9d7491b37d360a0266e}\label{class_credits_state_a012ea95f3fadc9d7491b37d360a0266e} 
+{\bfseries Credits\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_credits_state_a4986f625c7ce49f51cbb6c41816c6d3a}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_ac988f09f2ada17210c369db0d5300e3c}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_aa3aeba215db81f60ec8bac019849a61d}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_a61e4b578f94d46a644290e3f33f1b76a}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_a927c48b5626187301ef6ee75b2e91ec1}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_adb55ca280bea43f79674c1182ed4d9f3}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_a4294fd3503d0b66d9e58c9ae01621c2f}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_credits_state_a9185231855f01bf976bc2eb3e3df2557}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_credits_state_add54683de7120075a8f3daa0431f8186}{Draw}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_credits_state_a927c48b5626187301ef6ee75b2e91ec1}\label{class_credits_state_a927c48b5626187301ef6ee75b2e91ec1} 
+\index{CreditsState@{CreditsState}!Activate@{Activate}}
+\index{Activate@{Activate}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_aa3aeba215db81f60ec8bac019849a61d}\label{class_credits_state_aa3aeba215db81f60ec8bac019849a61d} 
+\index{CreditsState@{CreditsState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_adb55ca280bea43f79674c1182ed4d9f3}\label{class_credits_state_adb55ca280bea43f79674c1182ed4d9f3} 
+\index{CreditsState@{CreditsState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_add54683de7120075a8f3daa0431f8186}\label{class_credits_state_add54683de7120075a8f3daa0431f8186} 
+\index{CreditsState@{CreditsState}!Draw@{Draw}}
+\index{Draw@{Draw}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_a4986f625c7ce49f51cbb6c41816c6d3a}\label{class_credits_state_a4986f625c7ce49f51cbb6c41816c6d3a} 
+\index{CreditsState@{CreditsState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_ac988f09f2ada17210c369db0d5300e3c}\label{class_credits_state_ac988f09f2ada17210c369db0d5300e3c} 
+\index{CreditsState@{CreditsState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_a61e4b578f94d46a644290e3f33f1b76a}\label{class_credits_state_a61e4b578f94d46a644290e3f33f1b76a} 
+\index{CreditsState@{CreditsState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_a9185231855f01bf976bc2eb3e3df2557}\label{class_credits_state_a9185231855f01bf976bc2eb3e3df2557} 
+\index{CreditsState@{CreditsState}!Tick@{Tick}}
+\index{Tick@{Tick}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_credits_state_a4294fd3503d0b66d9e58c9ae01621c2f}\label{class_credits_state_a4294fd3503d0b66d9e58c9ae01621c2f} 
+\index{CreditsState@{CreditsState}!Update@{Update}}
+\index{Update@{Update}!CreditsState@{CreditsState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Credits\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Credits\+State.\+h\item 
+Credits\+State.\+cpp\end{DoxyCompactItemize}

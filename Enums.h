@@ -1,9 +1,15 @@
 #pragma once
 
-enum Axis { Horizontal, Vertical };
-enum Direction2D { Up, Down, Right, Left };
-
-class Enums
-{
+// Enumeration representing the axes in 2D space.
+enum Axis {
+    Horizontal, // Horizontal axis
+    Vertical    // Vertical axis
 };
 
+// Enumeration representing 2D directions.
+enum Direction2D {
+    Up,    // Upward direction
+    Down,  // Downward direction
+    Right, // Rightward direction
+    Left   // Leftward direction
+};

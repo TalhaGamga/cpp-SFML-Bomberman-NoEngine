@@ -1,0 +1,155 @@
+\doxysection{Explosion Class Reference}
+\hypertarget{class_explosion}{}\label{class_explosion}\index{Explosion@{Explosion}}
+Inheritance diagram for Explosion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_explosion}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_explosion_a575d9bf5498f83f59d0b3a1c8f2fb401}\label{class_explosion_a575d9bf5498f83f59d0b3a1c8f2fb401} 
+{\bfseries Explosion} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data, Direction2D direction, sf\+::\+Vector2f pos)
+\item 
+void \mbox{\hyperlink{class_explosion_a841a80fe87ec4f458ccfaaedf54baffa}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_explosion_a5fc2c79acc2a7a99d01e37f9e085fec4}{Tick}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_explosion_ae28189fc95432aec95e5ae4e9bac543f}{Render}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window) override
+\item 
+virtual void \mbox{\hyperlink{class_explosion_a39686f7eee95ddd7703114dc98b14d37}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Map\+Object} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_explosion_a1b24d771c44d694f17da4f4c16ccaa69}{Check\+Collision}} () override
+\item 
+void \mbox{\hyperlink{class_explosion_a45dc8a2e3176801ff94b621e2f7afac8}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\item 
+void \mbox{\hyperlink{class_explosion_a46508c0ada298ee3e96a67464c6853b4}{on\+Collision\+Exit}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collidable_a88876505f8bd0b10454d8eb72446bd4e}\label{class_collidable_a88876505f8bd0b10454d8eb72446bd4e} 
+virtual void {\bfseries Check\+Collision} ()=0
+\item 
+\Hypertarget{class_collidable_a59f694ff17e2e0a632f531439ac4552a}\label{class_collidable_a59f694ff17e2e0a632f531439ac4552a} 
+virtual void {\bfseries on\+Collision\+Enter} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\item 
+\Hypertarget{class_collidable_ae621384edcd66c7fa9786d1091ae56df}\label{class_collidable_ae621384edcd66c7fa9786d1091ae56df} 
+virtual void {\bfseries on\+Collision\+Exit} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Obstacle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries map\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries wide\+Collider}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_explosion_a1b24d771c44d694f17da4f4c16ccaa69}\label{class_explosion_a1b24d771c44d694f17da4f4c16ccaa69} 
+\index{Explosion@{Explosion}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily void Explosion\+::\+Check\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_explosion_a39686f7eee95ddd7703114dc98b14d37}\label{class_explosion_a39686f7eee95ddd7703114dc98b14d37} 
+\index{Explosion@{Explosion}!draw@{draw}}
+\index{draw@{draw}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Explosion\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_explosion_a45dc8a2e3176801ff94b621e2f7afac8}\label{class_explosion_a45dc8a2e3176801ff94b621e2f7afac8} 
+\index{Explosion@{Explosion}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void Explosion\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_explosion_a46508c0ada298ee3e96a67464c6853b4}\label{class_explosion_a46508c0ada298ee3e96a67464c6853b4} 
+\index{Explosion@{Explosion}!onCollisionExit@{onCollisionExit}}
+\index{onCollisionExit@{onCollisionExit}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{onCollisionExit()}{onCollisionExit()}}
+{\footnotesize\ttfamily void Explosion\+::on\+Collision\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_explosion_ae28189fc95432aec95e5ae4e9bac543f}\label{class_explosion_ae28189fc95432aec95e5ae4e9bac543f} 
+\index{Explosion@{Explosion}!Render@{Render}}
+\index{Render@{Render}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Explosion\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_explosion_a5fc2c79acc2a7a99d01e37f9e085fec4}\label{class_explosion_a5fc2c79acc2a7a99d01e37f9e085fec4} 
+\index{Explosion@{Explosion}!Tick@{Tick}}
+\index{Tick@{Tick}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Explosion\+::\+Tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_explosion_a841a80fe87ec4f458ccfaaedf54baffa}\label{class_explosion_a841a80fe87ec4f458ccfaaedf54baffa} 
+\index{Explosion@{Explosion}!Update@{Update}}
+\index{Update@{Update}!Explosion@{Explosion}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Explosion\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Explosion.\+h\item 
+Explosion.\+cpp\end{DoxyCompactItemize}

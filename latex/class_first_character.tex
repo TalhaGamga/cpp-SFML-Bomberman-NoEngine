@@ -1,0 +1,361 @@
+\doxysection{First\+Character Class Reference}
+\hypertarget{class_first_character}{}\label{class_first_character}\index{FirstCharacter@{FirstCharacter}}
+Inheritance diagram for First\+Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_first_character}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_first_character_a1be7ee9091f321f1f588d197b06157f7}\label{class_first_character_a1be7ee9091f321f1f588d197b06157f7} 
+{\bfseries First\+Character} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data, std\+::string texture\+Way, sf\+::\+Vector2f init\+Pos)
+\item 
+void \mbox{\hyperlink{class_first_character_aeed38061faf30d76317c6b510b9f7584}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_first_character_aba03d8de8873f7833ea5ea9c35f86f28}{Tick}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_aa567401afd44343fbd65410336f57a66}{Render}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window) override
+\item 
+virtual void \mbox{\hyperlink{class_first_character_adb638024729f8189f8a39a0191c16f87}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const override
+\item 
+virtual void \mbox{\hyperlink{class_first_character_a596d648d3a19e308c76b7f2fcf8d19e9}{Take\+Damage}} (float damage) override
+\item 
+void \mbox{\hyperlink{class_first_character_a162cb54413db24124bf96c6194e67305}{Set\+Movement\+Direction}} (sf\+::\+Vector2i direction) override
+\item 
+void \mbox{\hyperlink{class_first_character_a2c512619bd4adee73a2a7dbab3b99a47}{Drop\+Bomb}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_character_base}{Character\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Character\+Base} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void \mbox{\hyperlink{class_character_base_a6a7be71fa100bd5bda4ee317d913906d}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\item 
+virtual void {\bfseries Set\+Movement\+Direction} (sf\+::\+Vector2i direction)=0
+\item 
+virtual void {\bfseries Drop\+Bomb} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Map\+Object} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Take\+Damage} (float damage)=0
+\item 
+void {\bfseries Set\+Hp} (float initial\+Hp)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Bind\+On\+Taking\+Damage} (T \texorpdfstring{$\ast$}{*}instance, void(T\+::\texorpdfstring{$\ast$}{*}method)())
+\item 
+float {\bfseries get\+Initial\+Hp} ()
+\item 
+float {\bfseries get\+Current\+Hp} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_first_character_a932072ed485bfde1c5af21d22c2a8e7e}\label{class_first_character_a932072ed485bfde1c5af21d22c2a8e7e} 
+using {\bfseries Movement\+Method} = std\+::function$<$ void(sf\+::\+Time)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_first_character_a4d77c1818aff04da2bf3c72cd82712ec}{move\+Up}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_aea271943680ff92e58a46640d9d1e7c7}{move\+Down}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_ad5184df76e628d362377408b356ad6f6}{move\+Right}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_a694def31d2650864e9e3fefc014b1dbd}{move\+Left}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_a166e4e66fa014fa9ccf19943fbfd02a0}{idle}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_first_character_adff89db8f9d9d292a9a8b75589a780b9}{Check\+Collision}} () override
+\item 
+void \mbox{\hyperlink{class_first_character_a7937dfee3fc8ea5e96fcd6cd940ff30d}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\item 
+void \mbox{\hyperlink{class_first_character_a2000e136553985896b414fc7edeffc30}{on\+Collision\+Exit}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_base_a678904c36b67a3775f349e2f5a6b204f}\label{class_character_base_a678904c36b67a3775f349e2f5a6b204f} 
+virtual void {\bfseries move\+Up} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_a6e52c17df2f84df50ba4d7683e99a9d1}\label{class_character_base_a6e52c17df2f84df50ba4d7683e99a9d1} 
+virtual void {\bfseries move\+Down} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_ae22dd6b317a69b2cc91bb7af86d39bee}\label{class_character_base_ae22dd6b317a69b2cc91bb7af86d39bee} 
+virtual void {\bfseries move\+Right} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_ac3adeee3355adac28192635d88a00c90}\label{class_character_base_ac3adeee3355adac28192635d88a00c90} 
+virtual void {\bfseries move\+Left} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_a983c6eb668119561daffdb7a6ab04e81}\label{class_character_base_a983c6eb668119561daffdb7a6ab04e81} 
+virtual void {\bfseries idle} (sf\+::\+Time elapsed)=0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collidable_a88876505f8bd0b10454d8eb72446bd4e}\label{class_collidable_a88876505f8bd0b10454d8eb72446bd4e} 
+virtual void {\bfseries Check\+Collision} ()=0
+\item 
+\Hypertarget{class_collidable_a59f694ff17e2e0a632f531439ac4552a}\label{class_collidable_a59f694ff17e2e0a632f531439ac4552a} 
+virtual void {\bfseries on\+Collision\+Enter} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\item 
+\Hypertarget{class_collidable_ae621384edcd66c7fa9786d1091ae56df}\label{class_collidable_ae621384edcd66c7fa9786d1091ae56df} 
+virtual void {\bfseries on\+Collision\+Exit} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ sf\+::\+Vector2i, Movement\+Method $>$ \mbox{\hyperlink{class_first_character_a8837a641f2805d477039d4bce9a2fe45}{movement\+Methods}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_character_base}{Character\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape \texorpdfstring{$\ast$}{*} {\bfseries char\+Shape}
+\item 
+sf\+::\+Vector2i {\bfseries direction}
+\item 
+sf\+::\+Vector2f {\bfseries move\+To}
+\item 
+sf\+::\+Vector2f {\bfseries size}
+\item 
+float {\bfseries move\+Speed} = 50.\+0f
+\item 
+\mbox{\hyperlink{class_bomb}{Bomb}} \texorpdfstring{$\ast$}{*} {\bfseries bomb}
+\item 
+sf\+::\+Vector2i {\bfseries movement\+Direction}
+\item 
+\mbox{\hyperlink{class_health_bar}{Health\+Bar}} \texorpdfstring{$\ast$}{*} {\bfseries health\+Bar}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries map\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries wide\+Collider}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries initial\+Hp}
+\item 
+float {\bfseries current\+Hp}
+\item 
+On\+Taking\+Damage {\bfseries on\+Taking\+Damage}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_character_base}{Character\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+On\+Character\+Died {\bfseries on\+Character\+Died}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Obstacle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Died} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_first_character_adff89db8f9d9d292a9a8b75589a780b9}\label{class_first_character_adff89db8f9d9d292a9a8b75589a780b9} 
+\index{FirstCharacter@{FirstCharacter}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Check\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_first_character_adb638024729f8189f8a39a0191c16f87}\label{class_first_character_adb638024729f8189f8a39a0191c16f87} 
+\index{FirstCharacter@{FirstCharacter}!draw@{draw}}
+\index{draw@{draw}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void First\+Character\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a2c512619bd4adee73a2a7dbab3b99a47}\label{class_first_character_a2c512619bd4adee73a2a7dbab3b99a47} 
+\index{FirstCharacter@{FirstCharacter}!DropBomb@{DropBomb}}
+\index{DropBomb@{DropBomb}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{DropBomb()}{DropBomb()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Drop\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a166e4e66fa014fa9ccf19943fbfd02a0}\label{class_first_character_a166e4e66fa014fa9ccf19943fbfd02a0} 
+\index{FirstCharacter@{FirstCharacter}!idle@{idle}}
+\index{idle@{idle}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{idle()}{idle()}}
+{\footnotesize\ttfamily void First\+Character\+::idle (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_aea271943680ff92e58a46640d9d1e7c7}\label{class_first_character_aea271943680ff92e58a46640d9d1e7c7} 
+\index{FirstCharacter@{FirstCharacter}!moveDown@{moveDown}}
+\index{moveDown@{moveDown}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{moveDown()}{moveDown()}}
+{\footnotesize\ttfamily void First\+Character\+::move\+Down (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a694def31d2650864e9e3fefc014b1dbd}\label{class_first_character_a694def31d2650864e9e3fefc014b1dbd} 
+\index{FirstCharacter@{FirstCharacter}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily void First\+Character\+::move\+Left (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_ad5184df76e628d362377408b356ad6f6}\label{class_first_character_ad5184df76e628d362377408b356ad6f6} 
+\index{FirstCharacter@{FirstCharacter}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily void First\+Character\+::move\+Right (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a4d77c1818aff04da2bf3c72cd82712ec}\label{class_first_character_a4d77c1818aff04da2bf3c72cd82712ec} 
+\index{FirstCharacter@{FirstCharacter}!moveUp@{moveUp}}
+\index{moveUp@{moveUp}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{moveUp()}{moveUp()}}
+{\footnotesize\ttfamily void First\+Character\+::move\+Up (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a7937dfee3fc8ea5e96fcd6cd940ff30d}\label{class_first_character_a7937dfee3fc8ea5e96fcd6cd940ff30d} 
+\index{FirstCharacter@{FirstCharacter}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void First\+Character\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_first_character_a2000e136553985896b414fc7edeffc30}\label{class_first_character_a2000e136553985896b414fc7edeffc30} 
+\index{FirstCharacter@{FirstCharacter}!onCollisionExit@{onCollisionExit}}
+\index{onCollisionExit@{onCollisionExit}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{onCollisionExit()}{onCollisionExit()}}
+{\footnotesize\ttfamily void First\+Character\+::on\+Collision\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_first_character_aa567401afd44343fbd65410336f57a66}\label{class_first_character_aa567401afd44343fbd65410336f57a66} 
+\index{FirstCharacter@{FirstCharacter}!Render@{Render}}
+\index{Render@{Render}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_first_character_a162cb54413db24124bf96c6194e67305}\label{class_first_character_a162cb54413db24124bf96c6194e67305} 
+\index{FirstCharacter@{FirstCharacter}!SetMovementDirection@{SetMovementDirection}}
+\index{SetMovementDirection@{SetMovementDirection}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{SetMovementDirection()}{SetMovementDirection()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Set\+Movement\+Direction (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_character_base}{Character\+Base}}.
+
+\Hypertarget{class_first_character_a596d648d3a19e308c76b7f2fcf8d19e9}\label{class_first_character_a596d648d3a19e308c76b7f2fcf8d19e9} 
+\index{FirstCharacter@{FirstCharacter}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_damageable}{Damageable}}.
+
+\Hypertarget{class_first_character_aba03d8de8873f7833ea5ea9c35f86f28}\label{class_first_character_aba03d8de8873f7833ea5ea9c35f86f28} 
+\index{FirstCharacter@{FirstCharacter}!Tick@{Tick}}
+\index{Tick@{Tick}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_first_character_aeed38061faf30d76317c6b510b9f7584}\label{class_first_character_aeed38061faf30d76317c6b510b9f7584} 
+\index{FirstCharacter@{FirstCharacter}!Update@{Update}}
+\index{Update@{Update}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void First\+Character\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_first_character_a8837a641f2805d477039d4bce9a2fe45}\label{class_first_character_a8837a641f2805d477039d4bce9a2fe45} 
+\index{FirstCharacter@{FirstCharacter}!movementMethods@{movementMethods}}
+\index{movementMethods@{movementMethods}!FirstCharacter@{FirstCharacter}}
+\doxysubsubsection{\texorpdfstring{movementMethods}{movementMethods}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$sf\+::\+Vector2i, Movement\+Method$>$ First\+Character\+::movement\+Methods\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{sf::Vector2i(0,\ 1),\ std::bind(\&FirstCharacter::moveUp,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ sf::Vector2i(0,\ -\/1),\ std::bind(\&FirstCharacter::moveDown,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ sf::Vector2i(-\/1,\ 0),\ std::bind(\&FirstCharacter::moveLeft,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ sf::Vector2i(1,\ 0),\ std::bind(\&FirstCharacter::moveRight,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ sf::Vector2i(0,\ 0),\ std::bind(\&FirstCharacter::idle,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+First\+Character.\+h\item 
+First\+Character.\+cpp\end{DoxyCompactItemize}

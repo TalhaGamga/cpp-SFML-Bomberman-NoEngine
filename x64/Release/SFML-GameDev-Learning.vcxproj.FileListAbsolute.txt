@@ -1,1 +1,2 @@
 D:\GMGDevelopment\ProgrammingWorks\YeniSFML\SFMLBomberman-main\x64\Release\SFMLBomberman.exe
+D:\GMGDevelopment\ProgrammingWorks\SFMLProjects\SFMLBomberman-main\x64\Release\SFMLBomberman.exe

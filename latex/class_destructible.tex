@@ -1,0 +1,197 @@
+\doxysection{Destructible Class Reference}
+\hypertarget{class_destructible}{}\label{class_destructible}\index{Destructible@{Destructible}}
+Inheritance diagram for Destructible\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_destructible}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_destructible_ac360b4fd668ca05a8b84bb50b4effe82}\label{class_destructible_ac360b4fd668ca05a8b84bb50b4effe82} 
+{\bfseries Destructible} (sf\+::\+Vector2f pos, \mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+void \mbox{\hyperlink{class_destructible_a66f7d595f81c3b487846c7ea174db804}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_destructible_ad4b4d32c3fac4be47c6fa694aec4f06a}{Tick}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_destructible_aec7f63469248fa21b2f3cfdc2ceae99e}{Render}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window) override
+\item 
+virtual void \mbox{\hyperlink{class_destructible_ab54791daf290ebd3adc55188769b21cb}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const override
+\item 
+void \mbox{\hyperlink{class_destructible_ab3514448a12353aaee9228653013481f}{Take\+Damage}} (float damage) override
+\item 
+\Hypertarget{class_destructible_a7810b58cc6681c37c45570330bb1c65b}\label{class_destructible_a7810b58cc6681c37c45570330bb1c65b} 
+void {\bfseries Set\+Position} (sf\+::\+Vector2f pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Map\+Object} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Take\+Damage} (float damage)=0
+\item 
+void {\bfseries Set\+Hp} (float initial\+Hp)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Bind\+On\+Taking\+Damage} (T \texorpdfstring{$\ast$}{*}instance, void(T\+::\texorpdfstring{$\ast$}{*}method)())
+\item 
+float {\bfseries get\+Initial\+Hp} ()
+\item 
+float {\bfseries get\+Current\+Hp} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_destructible_a29641f817a6570ed5b5325b24531439c}{Check\+Collision}} () override
+\item 
+virtual void \mbox{\hyperlink{class_destructible_a547b73b507972f0d3e73b52a0be63bcc}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\item 
+virtual void \mbox{\hyperlink{class_destructible_ae727c499a6b567c0cb9bfbe12e44479d}{on\+Collision\+Exit}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collidable_a88876505f8bd0b10454d8eb72446bd4e}\label{class_collidable_a88876505f8bd0b10454d8eb72446bd4e} 
+virtual void {\bfseries Check\+Collision} ()=0
+\item 
+\Hypertarget{class_collidable_a59f694ff17e2e0a632f531439ac4552a}\label{class_collidable_a59f694ff17e2e0a632f531439ac4552a} 
+virtual void {\bfseries on\+Collision\+Enter} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\item 
+\Hypertarget{class_collidable_ae621384edcd66c7fa9786d1091ae56df}\label{class_collidable_ae621384edcd66c7fa9786d1091ae56df} 
+virtual void {\bfseries on\+Collision\+Exit} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Obstacle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Died} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries map\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries wide\+Collider}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries initial\+Hp}
+\item 
+float {\bfseries current\+Hp}
+\item 
+On\+Taking\+Damage {\bfseries on\+Taking\+Damage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_destructible_a29641f817a6570ed5b5325b24531439c}\label{class_destructible_a29641f817a6570ed5b5325b24531439c} 
+\index{Destructible@{Destructible}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily void Destructible\+::\+Check\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_destructible_ab54791daf290ebd3adc55188769b21cb}\label{class_destructible_ab54791daf290ebd3adc55188769b21cb} 
+\index{Destructible@{Destructible}!draw@{draw}}
+\index{draw@{draw}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Destructible\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_destructible_a547b73b507972f0d3e73b52a0be63bcc}\label{class_destructible_a547b73b507972f0d3e73b52a0be63bcc} 
+\index{Destructible@{Destructible}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void Destructible\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_destructible_ae727c499a6b567c0cb9bfbe12e44479d}\label{class_destructible_ae727c499a6b567c0cb9bfbe12e44479d} 
+\index{Destructible@{Destructible}!onCollisionExit@{onCollisionExit}}
+\index{onCollisionExit@{onCollisionExit}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{onCollisionExit()}{onCollisionExit()}}
+{\footnotesize\ttfamily void Destructible\+::on\+Collision\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_destructible_aec7f63469248fa21b2f3cfdc2ceae99e}\label{class_destructible_aec7f63469248fa21b2f3cfdc2ceae99e} 
+\index{Destructible@{Destructible}!Render@{Render}}
+\index{Render@{Render}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Destructible\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_destructible_ab3514448a12353aaee9228653013481f}\label{class_destructible_ab3514448a12353aaee9228653013481f} 
+\index{Destructible@{Destructible}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily void Destructible\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_damageable}{Damageable}}.
+
+\Hypertarget{class_destructible_ad4b4d32c3fac4be47c6fa694aec4f06a}\label{class_destructible_ad4b4d32c3fac4be47c6fa694aec4f06a} 
+\index{Destructible@{Destructible}!Tick@{Tick}}
+\index{Tick@{Tick}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Destructible\+::\+Tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_destructible_a66f7d595f81c3b487846c7ea174db804}\label{class_destructible_a66f7d595f81c3b487846c7ea174db804} 
+\index{Destructible@{Destructible}!Update@{Update}}
+\index{Update@{Update}!Destructible@{Destructible}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Destructible\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Destructible.\+h\item 
+Destructible.\+cpp\end{DoxyCompactItemize}

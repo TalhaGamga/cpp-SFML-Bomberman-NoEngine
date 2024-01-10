@@ -1,0 +1,41 @@
+\doxysection{Event\+Manager Class Reference}
+\hypertarget{class_event_manager}{}\label{class_event_manager}\index{EventManager@{EventManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_event_manager_aaf7ce138fafe7bdb8ba452cbe1d3582f}\label{class_event_manager_aaf7ce138fafe7bdb8ba452cbe1d3582f} 
+void {\bfseries Test} (int x)
+\item 
+\Hypertarget{class_event_manager_a0107f0545ff9686da6e25f880c25f46e}\label{class_event_manager_a0107f0545ff9686da6e25f880c25f46e} 
+bool {\bfseries Add\+Binding} (\mbox{\hyperlink{struct_binding}{Binding}} \texorpdfstring{$\ast$}{*}binding)
+\item 
+\Hypertarget{class_event_manager_a760e5d11721799bbd9b52e1ee4bae4a8}\label{class_event_manager_a760e5d11721799bbd9b52e1ee4bae4a8} 
+bool {\bfseries Remove\+Binding} (std\+::string name)
+\item 
+\Hypertarget{class_event_manager_a451426df08808072e160cdc0e621adfb}\label{class_event_manager_a451426df08808072e160cdc0e621adfb} 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries Add\+Callback} (State\+Type state, const std\+::string \&name, void(T\+::\texorpdfstring{$\ast$}{*}func)(\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}), T \texorpdfstring{$\ast$}{*}instance)
+\item 
+\Hypertarget{class_event_manager_a5021f5bc85f74fff372907000d4282fa}\label{class_event_manager_a5021f5bc85f74fff372907000d4282fa} 
+bool {\bfseries Remove\+Callback} (State\+Type state, const std\+::string \&name)
+\item 
+\Hypertarget{class_event_manager_a183b08bb25b34487b98c073862528de4}\label{class_event_manager_a183b08bb25b34487b98c073862528de4} 
+void {\bfseries Handle\+Event} (sf\+::\+Event \&event)
+\item 
+\Hypertarget{class_event_manager_a4bf667988bd84c7d8d179816adee5213}\label{class_event_manager_a4bf667988bd84c7d8d179816adee5213} 
+void {\bfseries Update} ()
+\item 
+\Hypertarget{class_event_manager_a085c7f9580a6f34c3ab8860b7f945ae1}\label{class_event_manager_a085c7f9580a6f34c3ab8860b7f945ae1} 
+void {\bfseries Set\+Current\+State} (State\+Type state)
+\item 
+\Hypertarget{class_event_manager_ac8628b5c6611ac1d6ef3a76aded5a88b}\label{class_event_manager_ac8628b5c6611ac1d6ef3a76aded5a88b} 
+sf\+::\+Vector2i {\bfseries Get\+Mouse\+Pos} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}wind=nullptr)
+\item 
+\Hypertarget{class_event_manager_a8905b589e1ea9ba308700085390cb986}\label{class_event_manager_a8905b589e1ea9ba308700085390cb986} 
+void {\bfseries Load\+Bindings} (std\+::string key\+File\+Path)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Event\+Manager.\+h\item 
+Event\+Manager.\+cpp\end{DoxyCompactItemize}

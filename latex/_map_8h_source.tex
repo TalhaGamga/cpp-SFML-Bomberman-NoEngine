@@ -1,0 +1,89 @@
+\doxysection{Map.\+h}
+\hypertarget{_map_8h_source}{}\label{_map_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameStateManager.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Collidable.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Collider.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collidable}{Collidable}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collider}{Collider}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_map_object}{MapObject}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Structure\ containing\ data\ related\ to\ the\ game\ map.}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_map_data}{MapData}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Vector\ of\ map\ objects\ present\ on\ the\ map.}}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector\ <MapObject*>\ mapObjs;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Vector\ of\ collidable\ objects\ present\ on\ the\ map.}}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<Collidable*>\ collidables;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ the\ grid\ on\ the\ map.}}
+\DoxyCodeLine{00022\ \ \ \ \ sf::Vector2f\ gridSize\ =\ sf::Vector2f(90.0f,\ 90.0f);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ first\ character\ on\ the\ map.}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_collidable}{Collidable}}*\ character1;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ second\ character\ on\ the\ map.}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_collidable}{Collidable}}*\ character2;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Add\ a\ map\ object\ to\ the\ vector\ of\ map\ objects.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ AddToMapObjs(\mbox{\hyperlink{class_map_object}{MapObject}}*\ obj)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ mapObjs.push\_back(obj);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ map\ object\ from\ the\ vector\ of\ map\ objects.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveFromMapObjs(\mbox{\hyperlink{class_map_object}{MapObject}}*\ obj)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(mapObjs.begin(),\ mapObjs.end(),\ obj);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ mapObjs.end())\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ mapObjs.erase(it);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Add\ a\ collidable\ object\ to\ the\ vector\ of\ collidables.}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ AddToCollidables(\mbox{\hyperlink{class_collidable}{Collidable}}*\ collidable)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ collidables.push\_back(collidable);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ collidable\ object\ from\ the\ vector\ of\ collidables.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveFromCollidables(\mbox{\hyperlink{class_collidable}{Collidable}}*\ collidable)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(collidables.begin(),\ collidables.end(),\ collidable);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ collidables.end())\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ collidables.erase(it);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Abstract\ class\ representing\ the\ game\ map.}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_map}{Map}}\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Load\ the\ map.}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ LoadMap()\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Update()\ =\ 0;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ map.}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ called\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Data\ structure\ containing\ map-\/related\ information.}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{struct_map_data}{MapData}}\ mapData;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ 2D\ vector\ representing\ the\ tile\ map.}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ 12x8\ (0:\ empty\ -\/\ 1:\ Destructible\ 2:\ Indestructible)}}
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<std::vector<int>>\ tileMap;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Define\ the\ initial\ tile\ map\ layout.}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DefineTileMap()\ =\ 0;}
+\DoxyCodeLine{00084\ \};}
+
+\end{DoxyCode}

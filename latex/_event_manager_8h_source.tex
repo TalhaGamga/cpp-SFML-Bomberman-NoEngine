@@ -1,0 +1,213 @@
+\doxysection{Event\+Manager.\+h}
+\hypertarget{_event_manager_8h_source}{}\label{_event_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Forward\ Declarations}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ EventType;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_info}{EventInfo}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_details}{EventDetails}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_binding}{Binding}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_callback}{Callback}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Type\ aliases\ for\ managing\ events,\ bindings,\ and\ callbacks}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }Events\ =\ std::vector<std::pair<EventType,\ EventInfo>>;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }Bindings\ =\ std::unordered\_map<std::string,\ Binding*>;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ }CallbackContainer\ =\ std::unordered\_map<std::string,\ std::function<void(\mbox{\hyperlink{struct_event_details}{EventDetails}}*)>>;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{enum\ class}\ StateType;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }Callbacks\ =\ std::unordered\_map<StateType,\ CallbackContainer>;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{>\ Couple\ any\ mix\ of\ keys,\ buttons,\ or\ events\ (bindings)\ with\ desired\ functionality\ identified\ by\ a\ string}}
+\DoxyCodeLine{00025\ \textcolor{comment}{}}
+\DoxyCodeLine{00026\ \textcolor{comment}{>\ Binding\ of\ said\ functionalities\ to\ methods\ that\ get\ called\ if\ all\ the\ conditions\ are\ met}}
+\DoxyCodeLine{00027\ \textcolor{comment}{}}
+\DoxyCodeLine{00028\ \textcolor{comment}{>\ A\ way\ through\ which\ the\ event\ manager\ can\ deal\ with\ actual\ SFML\ events\ being\ polled}}
+\DoxyCodeLine{00029\ \textcolor{comment}{}}
+\DoxyCodeLine{00030\ \textcolor{comment}{>\ Loading\ the\ bindings\ from\ a\ config.\ file}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Enumeration\ representing\ the\ types\ of\ events\ we'll\ be\ dealing\ with}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum\ class}\ EventType\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ KeyDown\ =\ sf::Event::KeyPressed,}
+\DoxyCodeLine{00036\ \ \ \ \ KeyUp\ =\ sf::Event::KeyReleased,}
+\DoxyCodeLine{00037\ \ \ \ \ MButtonDown\ =\ sf::Event::MouseButtonPressed,}
+\DoxyCodeLine{00038\ \ \ \ \ MButtonUp\ =\ sf::Event::MouseButtonReleased,}
+\DoxyCodeLine{00039\ \ \ \ \ MouseWheel\ =\ sf::Event::MouseWheelMoved,}
+\DoxyCodeLine{00040\ \ \ \ \ WindowResized\ =\ sf::Event::Resized,}
+\DoxyCodeLine{00041\ \ \ \ \ GainedFocus\ =\ sf::Event::GainedFocus,}
+\DoxyCodeLine{00042\ \ \ \ \ LostFocus\ =\ sf::Event::LostFocus,}
+\DoxyCodeLine{00043\ \ \ \ \ MouseEntered\ =\ sf::Event::MouseEntered,}
+\DoxyCodeLine{00044\ \ \ \ \ MouseLeft\ =\ sf::Event::MouseLeft,}
+\DoxyCodeLine{00045\ \ \ \ \ Closed\ =\ sf::Event::Closed,}
+\DoxyCodeLine{00046\ \ \ \ \ TextEntered\ =\ sf::Event::TextEntered,}
+\DoxyCodeLine{00047\ \ \ \ \ Keyboard\ =\ sf::Event::Count\ +\ 1,}
+\DoxyCodeLine{00048\ \ \ \ \ Mouse,}
+\DoxyCodeLine{00049\ \ \ \ \ Joystick}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ Structure\ to\ hold\ event\ information}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_info}{EventInfo}}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_event_info}{EventInfo}}()}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ code\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_event_info}{EventInfo}}(\textcolor{keywordtype}{int}\ event)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ code\ =\ event;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ code;\ \ \ \ \textcolor{comment}{//\ Event\ code}}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ Structure\ to\ hold\ detailed\ event\ information}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_details}{EventDetails}}}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{struct_event_details}{EventDetails}}(\textcolor{keyword}{const}\ std::string\&\ bindName)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ :\ name(bindName)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Clear();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ sf::Vector2i\ size;}
+\DoxyCodeLine{00082\ \ \ \ \ sf::Uint32\ textEntered;}
+\DoxyCodeLine{00083\ \ \ \ \ sf::Vector2i\ mouse;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ mouseWheelDelta;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ keyCode;\ \ \ \ \textcolor{comment}{//\ Single\ key\ code}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ Clear()\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ size\ =\ sf::Vector2i(0,\ 0);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ textEntered\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ mouse\ =\ sf::Vector2i(0,\ 0);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ mouseWheelDelta\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ keyCode\ =\ 0;\ \textcolor{comment}{//\ Represents\ any\ scancode\ not\ present\ in\ this\ enum}}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ Structure\ representing\ a\ binding\ of\ events\ to\ functionalities}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_binding}{Binding}}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{struct_binding}{Binding}}(\textcolor{keyword}{const}\ std::string\&\ name)\ :\ name(name),\ details(name),\ c(0)\ \{\}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Bind\ an\ event\ to\ the\ functionality}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ BindEvent(EventType\ type,\ \mbox{\hyperlink{struct_event_info}{EventInfo}}\ info\ =\ \mbox{\hyperlink{struct_event_info}{EventInfo}}())\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ events.emplace\_back(type,\ info);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ Events\ events;}
+\DoxyCodeLine{00106\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ c;\ \textcolor{comment}{//\ Count\ for\ events\ that\ are\ "{}happening"{}\ -\/\ active\ event\ counter}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{struct_event_details}{EventDetails}}\ details;}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ Structure\ representing\ a\ callback}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00114\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_callback}{Callback}}\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00116\ \ \ \ \ T*\ CallbackInstance;\ \textcolor{comment}{//\ Pointer\ to\ instance}}
+\DoxyCodeLine{00117\ \ \ \ \ void\ (T::*\ callback)();\ \textcolor{comment}{//\ Pointer\ to\ a\ member\ function}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Call\ the\ callback\ function}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ Call()\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ CallbackInstance-\/>*callback();}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00126\ \textcolor{comment}{Explanation:}}
+\DoxyCodeLine{00127\ \textcolor{comment}{Let's\ say,\ we\ want\ the\ character\ to\ jump\ when\ the\ spacebar\ is\ hit.\ We\ would\ create}}
+\DoxyCodeLine{00128\ \textcolor{comment}{a\ binding\ with\ a\ name\ "{}Jump"{},\ which\ is\ our\ action\ name,\ and\ add\ a\ single\ event\ of}}
+\DoxyCodeLine{00129\ \textcolor{comment}{type\ KeyDown\ and\ code\ sf::Keyboard::Space\ to\ it.\ For\ argument\ sake,\ let's\ say}}
+\DoxyCodeLine{00130\ \textcolor{comment}{the\ character\ has\ a\ method\ called\ Jump().\ That's\ our\ callback.\ We\ want\ to\ bind\ that}}
+\DoxyCodeLine{00131\ \textcolor{comment}{method\ to\ the\ name\ "{}Jump"{}\ and\ have\ the\ event\ manager\ call\ the\ character's\ Jump()}}
+\DoxyCodeLine{00132\ \textcolor{comment}{method\ when\ the\ space\ key\ is\ pressed.\ That,\ in\ a\ nutshell,\ is\ how\ we're\ going\ to\ be}}
+\DoxyCodeLine{00133\ \textcolor{comment}{handling\ input\ with\ this\ new\ system.}}
+\DoxyCodeLine{00134\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_manager}{EventManager}}\ \{}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{EventManager}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{\string~EventManager}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ Test\ function\ for\ demonstration}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ Test(\textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ std::cout\ <<\ x\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ Add\ a\ binding\ to\ the\ manager}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ AddBinding(\mbox{\hyperlink{struct_binding}{Binding}}*\ binding);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ binding\ from\ the\ manager}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ RemoveBinding(std::string\ name);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Add\ a\ callback\ to\ a\ state}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ AddCallback(StateType\ state,\ \textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}(T::*\ func)(\mbox{\hyperlink{struct_event_details}{EventDetails}}*),\ T*\ instance)}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::placeholders::\_1\ is\ the\ argument\ of\ func;\ it\ has\ to\ be\ given\ first\ when\ it's\ called}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr\ =\ callbacks.emplace(state,\ CallbackContainer()).first;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ temp\ =\ std::bind(func,\ instance,\ std::placeholders::\_1);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itr-\/>second.emplace(name,\ temp).second;}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ callback\ from\ a\ state}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{bool}\ RemoveCallback(StateType\ state,\ \textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr\ =\ callbacks.find(state);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (itr\ ==\ callbacks.end())}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr2\ =\ itr-\/>second.find(name);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (itr2\ ==\ itr-\/>second.end())}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ itr-\/>second.erase(name);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ Handle\ an\ SFML\ event}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleEvent(sf::Event\&\ event);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ Update\ the\ event\ manager}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ current\ state\ of\ the\ manager}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ SetCurrentState(StateType\ state);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ mouse\ position}}
+\DoxyCodeLine{00192\ \ \ \ \ sf::Vector2i\ GetMousePos(sf::RenderWindow*\ wind\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00193\ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (wind\ ?\ sf::Mouse::getPosition(*wind)\ :\ sf::Mouse::getPosition());}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{comment}{//\ Load\ bindings\ from\ a\ config\ file}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ LoadBindings(std::string\ keyFilePath);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{comment}{//\ Collections\ of\ bindings\ and\ callbacks}}
+\DoxyCodeLine{00202\ \ \ \ \ Bindings\ bindings;}
+\DoxyCodeLine{00203\ \ \ \ \ Callbacks\ callbacks;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//\ Current\ state\ and\ focus\ status}}
+\DoxyCodeLine{00206\ \ \ \ \ StateType\ currentState;}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasFocus;}
+\DoxyCodeLine{00208\ \};}
+
+\end{DoxyCode}

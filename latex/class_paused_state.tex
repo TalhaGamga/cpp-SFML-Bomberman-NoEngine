@@ -1,0 +1,177 @@
+\doxysection{Paused\+State Class Reference}
+\hypertarget{class_paused_state}{}\label{class_paused_state}\index{PausedState@{PausedState}}
+Inheritance diagram for Paused\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_paused_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_paused_state_a10ee92467381a76f92e4c7a232656f2a}\label{class_paused_state_a10ee92467381a76f92e4c7a232656f2a} 
+{\bfseries Paused\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_paused_state_ae681935e2ea335dd059ec4a473e6c33d}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_aee3b17b97255c05a41d21c98b57647fb}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_a1324fcd1818e5151d729ef52d59cd96f}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_a9a31e9201653232c51306d67a99cd1cd}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_af218e5a7aa3bbcb7100487039fbb7827}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_a1e6f02a098d7af7741e7fec29dfc27f1}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_adc4629bd1f3aea6c450b319dc69e417b}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_paused_state_ad024fd8cb0e93a8fd33707cde2d493e9}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_paused_state_a10c7dfda5dd6d71007853fcf2a53dd65}{Draw}} () override
+\item 
+\Hypertarget{class_paused_state_a2996e0b9e820609f70e8548abc8fa0ed}\label{class_paused_state_a2996e0b9e820609f70e8548abc8fa0ed} 
+void {\bfseries Unpause} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_paused_state_af218e5a7aa3bbcb7100487039fbb7827}\label{class_paused_state_af218e5a7aa3bbcb7100487039fbb7827} 
+\index{PausedState@{PausedState}!Activate@{Activate}}
+\index{Activate@{Activate}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_a1324fcd1818e5151d729ef52d59cd96f}\label{class_paused_state_a1324fcd1818e5151d729ef52d59cd96f} 
+\index{PausedState@{PausedState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_a1e6f02a098d7af7741e7fec29dfc27f1}\label{class_paused_state_a1e6f02a098d7af7741e7fec29dfc27f1} 
+\index{PausedState@{PausedState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_a10c7dfda5dd6d71007853fcf2a53dd65}\label{class_paused_state_a10c7dfda5dd6d71007853fcf2a53dd65} 
+\index{PausedState@{PausedState}!Draw@{Draw}}
+\index{Draw@{Draw}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_ae681935e2ea335dd059ec4a473e6c33d}\label{class_paused_state_ae681935e2ea335dd059ec4a473e6c33d} 
+\index{PausedState@{PausedState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_aee3b17b97255c05a41d21c98b57647fb}\label{class_paused_state_aee3b17b97255c05a41d21c98b57647fb} 
+\index{PausedState@{PausedState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_a9a31e9201653232c51306d67a99cd1cd}\label{class_paused_state_a9a31e9201653232c51306d67a99cd1cd} 
+\index{PausedState@{PausedState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_ad024fd8cb0e93a8fd33707cde2d493e9}\label{class_paused_state_ad024fd8cb0e93a8fd33707cde2d493e9} 
+\index{PausedState@{PausedState}!Tick@{Tick}}
+\index{Tick@{Tick}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_paused_state_adc4629bd1f3aea6c450b319dc69e417b}\label{class_paused_state_adc4629bd1f3aea6c450b319dc69e417b} 
+\index{PausedState@{PausedState}!Update@{Update}}
+\index{Update@{Update}!PausedState@{PausedState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Paused\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Paused\+State.\+h\item 
+Paused\+State.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\doxysection{Map\+\_\+1 Class Reference}
+\hypertarget{class_map__1}{}\label{class_map__1}\index{Map\_1@{Map\_1}}
+Inheritance diagram for Map\+\_\+1\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map__1}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_map__1_a33597f330d795f819974f134c428c922}\label{class_map__1_a33597f330d795f819974f134c428c922} 
+{\bfseries Map\+\_\+1} (\mbox{\hyperlink{struct_shared_context}{Shared\+Context}} \texorpdfstring{$\ast$}{*}shared\+Context)
+\item 
+void \mbox{\hyperlink{class_map__1_add0fe486f5c9cf42018c692b7513035b}{Load\+Map}} () override
+\item 
+void \mbox{\hyperlink{class_map__1_ad7ef3ee45a00ed048184023184dcd2da}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_map__1_acd006500482d660179ec00a2d691fc48}{Render}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window) override
+\item 
+void \mbox{\hyperlink{class_map__1_a78f5c5fb0f02f2029c56931a2f6d0b85}{Tick}} (sf\+::\+Time elapsed) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_map_abbeb77ca5a95cd6989a59055efd65ddd}\label{class_map_abbeb77ca5a95cd6989a59055efd65ddd} 
+virtual void {\bfseries Load\+Map} ()=0
+\item 
+\Hypertarget{class_map_a08c574775ce01e5814fe041f9385308b}\label{class_map_a08c574775ce01e5814fe041f9385308b} 
+virtual void {\bfseries Update} ()=0
+\item 
+\Hypertarget{class_map_a5f96d661ca648d6f58bdec9f4fafc4b3}\label{class_map_a5f96d661ca648d6f58bdec9f4fafc4b3} 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+\Hypertarget{class_map_a5f9bbf3893cf1fb995e7a8b3f379227d}\label{class_map_a5f9bbf3893cf1fb995e7a8b3f379227d} 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_map__1_ae5dfc43bf80f0387ad9b4eab01fc3463}{Define\+Tile\+Map}} () override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_map_a74fa36e7aa9970af4102b349eac477fd}\label{class_map_a74fa36e7aa9970af4102b349eac477fd} 
+virtual void {\bfseries Define\+Tile\+Map} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map}{Map}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} {\bfseries map\+Data}
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ {\bfseries tile\+Map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map__1_ae5dfc43bf80f0387ad9b4eab01fc3463}\label{class_map__1_ae5dfc43bf80f0387ad9b4eab01fc3463} 
+\index{Map\_1@{Map\_1}!DefineTileMap@{DefineTileMap}}
+\index{DefineTileMap@{DefineTileMap}!Map\_1@{Map\_1}}
+\doxysubsubsection{\texorpdfstring{DefineTileMap()}{DefineTileMap()}}
+{\footnotesize\ttfamily void Map\+\_\+1\+::\+Define\+Tile\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map}{Map}}.
+
+\Hypertarget{class_map__1_add0fe486f5c9cf42018c692b7513035b}\label{class_map__1_add0fe486f5c9cf42018c692b7513035b} 
+\index{Map\_1@{Map\_1}!LoadMap@{LoadMap}}
+\index{LoadMap@{LoadMap}!Map\_1@{Map\_1}}
+\doxysubsubsection{\texorpdfstring{LoadMap()}{LoadMap()}}
+{\footnotesize\ttfamily void Map\+\_\+1\+::\+Load\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map}{Map}}.
+
+\Hypertarget{class_map__1_acd006500482d660179ec00a2d691fc48}\label{class_map__1_acd006500482d660179ec00a2d691fc48} 
+\index{Map\_1@{Map\_1}!Render@{Render}}
+\index{Render@{Render}!Map\_1@{Map\_1}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Map\+\_\+1\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map}{Map}}.
+
+\Hypertarget{class_map__1_a78f5c5fb0f02f2029c56931a2f6d0b85}\label{class_map__1_a78f5c5fb0f02f2029c56931a2f6d0b85} 
+\index{Map\_1@{Map\_1}!Tick@{Tick}}
+\index{Tick@{Tick}!Map\_1@{Map\_1}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Map\+\_\+1\+::\+Tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map}{Map}}.
+
+\Hypertarget{class_map__1_ad7ef3ee45a00ed048184023184dcd2da}\label{class_map__1_ad7ef3ee45a00ed048184023184dcd2da} 
+\index{Map\_1@{Map\_1}!Update@{Update}}
+\index{Update@{Update}!Map\_1@{Map\_1}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Map\+\_\+1\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map}{Map}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map\+\_\+1.\+h\item 
+Map\+\_\+1.\+cpp\end{DoxyCompactItemize}

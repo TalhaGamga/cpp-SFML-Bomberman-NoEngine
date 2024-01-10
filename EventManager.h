@@ -5,13 +5,14 @@
 #include <string>
 #include <iostream>
 
-//Forward Declarations
+// Forward Declarations
 enum class EventType;
 struct EventInfo;
 struct EventDetails;
 struct Binding;
 template<class T> struct Callback;
 
+// Type aliases for managing events, bindings, and callbacks
 using Events = std::vector<std::pair<EventType, EventInfo>>;
 using Bindings = std::unordered_map<std::string, Binding*>;
 using CallbackContainer = std::unordered_map<std::string, std::function<void(EventDetails*)>>;
@@ -29,91 +30,96 @@ using Callbacks = std::unordered_map<StateType, CallbackContainer>;
 > Loading the bindings from a config. file
 */
 
-// Types of events we'll be dealing with
+// Enumeration representing the types of events we'll be dealing with
 enum class EventType {
-	KeyDown = sf::Event::KeyPressed,
-	KeyUp = sf::Event::KeyReleased,
-	MButtonDown = sf::Event::MouseButtonPressed,
-	MButtonUp = sf::Event::MouseButtonReleased,
-	MouseWheel = sf::Event::MouseWheelMoved,
-	WindowResized = sf::Event::Resized,
-	GainedFocus = sf::Event::GainedFocus,
-	LostFocus = sf::Event::LostFocus,
-	MouseEntered = sf::Event::MouseEntered,
-	MouseLeft = sf::Event::MouseLeft,
-	Closed = sf::Event::Closed,
-	TextEntered = sf::Event::TextEntered,
-	Keyboard = sf::Event::Count + 1,
-	Mouse,
-	Joystick
+    KeyDown = sf::Event::KeyPressed,
+    KeyUp = sf::Event::KeyReleased,
+    MButtonDown = sf::Event::MouseButtonPressed,
+    MButtonUp = sf::Event::MouseButtonReleased,
+    MouseWheel = sf::Event::MouseWheelMoved,
+    WindowResized = sf::Event::Resized,
+    GainedFocus = sf::Event::GainedFocus,
+    LostFocus = sf::Event::LostFocus,
+    MouseEntered = sf::Event::MouseEntered,
+    MouseLeft = sf::Event::MouseLeft,
+    Closed = sf::Event::Closed,
+    TextEntered = sf::Event::TextEntered,
+    Keyboard = sf::Event::Count + 1,
+    Mouse,
+    Joystick
 };
 
+// Structure to hold event information
 struct EventInfo {
-	EventInfo()
-	{
-		code = 0;
-	}
+    EventInfo()
+    {
+        code = 0;
+    }
 
-	EventInfo(int event)
-	{
-		code = event;
-	}
+    EventInfo(int event)
+    {
+        code = event;
+    }
 
-	union
-	{
-		int code;	// event code
-	};
+    union
+    {
+        int code;    // Event code
+    };
 };
 
+// Structure to hold detailed event information
 struct EventDetails
 {
-	EventDetails(const std::string& bindName)
-		: name(bindName)
-	{
-		Clear();
-	}
+    EventDetails(const std::string& bindName)
+        : name(bindName)
+    {
+        Clear();
+    }
 
-	std::string name;
+    std::string name;
 
-	sf::Vector2i size;
-	sf::Uint32 textEntered;
-	sf::Vector2i mouse;
-	int mouseWheelDelta;
-	int keyCode;	// single key code
+    sf::Vector2i size;
+    sf::Uint32 textEntered;
+    sf::Vector2i mouse;
+    int mouseWheelDelta;
+    int keyCode;    // Single key code
 
-	void Clear() {
-		size = sf::Vector2i(0, 0);
-		textEntered = 0;
-		mouse = sf::Vector2i(0, 0);
-		mouseWheelDelta = 0;
-		keyCode = 0; // Represents any scancode not present in this enum
-	}
+    void Clear() {
+        size = sf::Vector2i(0, 0);
+        textEntered = 0;
+        mouse = sf::Vector2i(0, 0);
+        mouseWheelDelta = 0;
+        keyCode = 0; // Represents any scancode not present in this enum
+    }
 };
 
-struct Binding // going to hold all the event information 
-{
-	Binding(const std::string& name) : name(name), details(name), c(0) {}
+// Structure representing a binding of events to functionalities
+struct Binding {
+    Binding(const std::string& name) : name(name), details(name), c(0) {}
 
-	void BindEvent(EventType type, EventInfo info = EventInfo()) {
-		events.emplace_back(type, info);
-	}
+    // Bind an event to the functionality
+    void BindEvent(EventType type, EventInfo info = EventInfo()) {
+        events.emplace_back(type, info);
+    }
 
-	Events events;
-	std::string name;
-	int c; // count for events that are "happening" - active event counter
+    Events events;
+    std::string name;
+    int c; // Count for events that are "happening" - active event counter
 
-	EventDetails details;
-}; // the structure where the event detail data member that gets shared around resides
+    EventDetails details;
+};
 
+// Structure representing a callback
 template<class T>
-struct Callback
-{
-	std::string name;
-	T* CallbackInstance; // pointer to instance
-	void (T::* callback)(); // a pointer to a member function
-	void Call() {
-		CallbackInstance->*callback();
-	}
+struct Callback {
+    std::string name;
+    T* CallbackInstance; // Pointer to instance
+    void (T::* callback)(); // Pointer to a member function
+
+    // Call the callback function
+    void Call() {
+        CallbackInstance->*callback();
+    }
 };
 
 /*
@@ -129,60 +135,74 @@ handling input with this new system.
 class EventManager {
 
 public:
-	EventManager();
-	~EventManager();
+    EventManager();
+    ~EventManager();
 
-	void Test(int x) {
-		std::cout << x << std::endl;
-	}
-	bool AddBinding(Binding* binding);
-	bool RemoveBinding(std::string name);
+    // Test function for demonstration
+    void Test(int x) {
+        std::cout << x << std::endl;
+    }
 
-	// Needs to be defined in the header!
-	// T* instance: Because this is a member function pointer, instance of the class having this method has to be given
-	template<class T>
-	bool AddCallback(StateType state, const std::string& name,
-		void(T::* func)(EventDetails*), T* instance)
-	{
-		//std::placeholders::_1 is the argument of func. it has to be given first when it's called
-		auto itr = callbacks.emplace(state, CallbackContainer()).first;
-		auto temp = std::bind(func, instance, std::placeholders::_1); //Cuz of the func is a member func, we need an instance of the function's owner class.
+    // Add a binding to the manager
+    bool AddBinding(Binding* binding);
 
-		return itr->second.emplace(name, temp).second;
-	}
+    // Remove a binding from the manager
+    bool RemoveBinding(std::string name);
 
-	bool RemoveCallback(StateType state, const std::string& name) {
-		auto itr = callbacks.find(state);
-		if (itr == callbacks.end())
-		{
-			return false;
-		}
+    // Add a callback to a state
+    template<class T>
+    bool AddCallback(StateType state, const std::string& name,
+        void(T::* func)(EventDetails*), T* instance)
+    {
+        // std::placeholders::_1 is the argument of func; it has to be given first when it's called
+        auto itr = callbacks.emplace(state, CallbackContainer()).first;
+        auto temp = std::bind(func, instance, std::placeholders::_1);
 
-		auto itr2 = itr->second.find(name);
-		if (itr2 == itr->second.end())
-		{
-			return false;
-		}
+        return itr->second.emplace(name, temp).second;
+    }
 
-		itr->second.erase(name);
-		return true;
-	}
+    // Remove a callback from a state
+    bool RemoveCallback(StateType state, const std::string& name) {
+        auto itr = callbacks.find(state);
+        if (itr == callbacks.end())
+        {
+            return false;
+        }
 
-	void HandleEvent(sf::Event& event);
-	void Update();
+        auto itr2 = itr->second.find(name);
+        if (itr2 == itr->second.end())
+        {
+            return false;
+        }
 
-	void SetCurrentState(StateType state);
+        itr->second.erase(name);
+        return true;
+    }
 
-	sf::Vector2i GetMousePos(sf::RenderWindow* wind = nullptr)
-	{
-		return (wind ? sf::Mouse::getPosition(*wind) : sf::Mouse::getPosition());
-	}
+    // Handle an SFML event
+    void HandleEvent(sf::Event& event);
 
-	void LoadBindings(std::string keyFilePath);
+    // Update the event manager
+    void Update();
+
+    // Set the current state of the manager
+    void SetCurrentState(StateType state);
+
+    // Get the mouse position
+    sf::Vector2i GetMousePos(sf::RenderWindow* wind = nullptr)
+    {
+        return (wind ? sf::Mouse::getPosition(*wind) : sf::Mouse::getPosition());
+    }
+
+    // Load bindings from a config file
+    void LoadBindings(std::string keyFilePath);
 
 private:
-	Bindings bindings;
-	Callbacks callbacks;
-	StateType currentState;
-	bool hasFocus;
+    // Collections of bindings and callbacks
+    Bindings bindings;
+    Callbacks callbacks;
+
+    // Current state and focus status
+    StateType currentState;
+    bool hasFocus;
 };

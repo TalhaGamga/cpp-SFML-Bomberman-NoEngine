@@ -1,0 +1,177 @@
+\doxysection{Intro\+State Class Reference}
+\hypertarget{class_intro_state}{}\label{class_intro_state}\index{IntroState@{IntroState}}
+Inheritance diagram for Intro\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_intro_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_intro_state_a56cdbcc6409eafa37756e7973382e0ac}\label{class_intro_state_a56cdbcc6409eafa37756e7973382e0ac} 
+{\bfseries Intro\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_intro_state_abeb13846183f4d986eefddee62504f39}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_af1828535b142ee9b886dd2c098140cdc}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_a1fa6a246e9ef96b67f717cdfdb94d093}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_a520b8126342d7b573b859ffe322c9c0c}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_a655b851676a33e2766e352111c03f368}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_a445d0c27678a4b60a0c79201eb299719}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_acb62089b17d2853d89eea8669de1ffeb}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_intro_state_a0eac094f12c46551fbb22a522be05044}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_intro_state_ab54e50ca41032f002b31a47cb65cd934}{Draw}} () override
+\item 
+\Hypertarget{class_intro_state_a526e37643b8a1cc4620c2f5666caf35d}\label{class_intro_state_a526e37643b8a1cc4620c2f5666caf35d} 
+void {\bfseries Continue} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_intro_state_a655b851676a33e2766e352111c03f368}\label{class_intro_state_a655b851676a33e2766e352111c03f368} 
+\index{IntroState@{IntroState}!Activate@{Activate}}
+\index{Activate@{Activate}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_a1fa6a246e9ef96b67f717cdfdb94d093}\label{class_intro_state_a1fa6a246e9ef96b67f717cdfdb94d093} 
+\index{IntroState@{IntroState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_a445d0c27678a4b60a0c79201eb299719}\label{class_intro_state_a445d0c27678a4b60a0c79201eb299719} 
+\index{IntroState@{IntroState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_ab54e50ca41032f002b31a47cb65cd934}\label{class_intro_state_ab54e50ca41032f002b31a47cb65cd934} 
+\index{IntroState@{IntroState}!Draw@{Draw}}
+\index{Draw@{Draw}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_abeb13846183f4d986eefddee62504f39}\label{class_intro_state_abeb13846183f4d986eefddee62504f39} 
+\index{IntroState@{IntroState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_af1828535b142ee9b886dd2c098140cdc}\label{class_intro_state_af1828535b142ee9b886dd2c098140cdc} 
+\index{IntroState@{IntroState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_a520b8126342d7b573b859ffe322c9c0c}\label{class_intro_state_a520b8126342d7b573b859ffe322c9c0c} 
+\index{IntroState@{IntroState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_a0eac094f12c46551fbb22a522be05044}\label{class_intro_state_a0eac094f12c46551fbb22a522be05044} 
+\index{IntroState@{IntroState}!Tick@{Tick}}
+\index{Tick@{Tick}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_intro_state_acb62089b17d2853d89eea8669de1ffeb}\label{class_intro_state_acb62089b17d2853d89eea8669de1ffeb} 
+\index{IntroState@{IntroState}!Update@{Update}}
+\index{Update@{Update}!IntroState@{IntroState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Intro\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Intro\+State.\+h\item 
+Intro\+State.\+cpp\end{DoxyCompactItemize}

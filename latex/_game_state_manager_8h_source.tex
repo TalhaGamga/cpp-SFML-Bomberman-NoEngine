@@ -1,0 +1,96 @@
+\doxysection{Game\+State\+Manager.\+h}
+\hypertarget{_game_state_manager_8h_source}{}\label{_game_state_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/System/Time.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EventManager.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Window.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}BaseState.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Type\ alias\ for\ a\ container\ holding\ pairs\ of\ StateType\ and\ BaseState\ pointers.}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }StateContainer\ =\ std::vector<std::pair<StateType,\ BaseState*>>;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Type\ alias\ for\ a\ container\ holding\ StateType\ values.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ }TypeContainer\ =\ std::vector<StateType>;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Type\ alias\ for\ a\ factory\ function\ mapping\ StateType\ to\ BaseState\ pointers.}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }StateFactory\ =\ std::unordered\_map<StateType,\ std::function<\mbox{\hyperlink{class_base_state}{BaseState}}*\ (void)>>;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Structure\ representing\ shared\ context\ among\ game\ states.}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_shared_context}{SharedContext}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_shared_context}{SharedContext}}()\ :\ window(\textcolor{keyword}{nullptr}),\ eventManager(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_window}{Window}}*\ window;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{EventManager}}*\ eventManager;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ switch\ between\ game\ states.}}
+\DoxyCodeLine{00023\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ StateType\&)>\ SwitchState;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Enumeration\ representing\ different\ game\ states.}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum\ class}\ StateType\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Intro\ =\ 1,}
+\DoxyCodeLine{00029\ \ \ \ \ MainMenu,}
+\DoxyCodeLine{00030\ \ \ \ \ Play,}
+\DoxyCodeLine{00031\ \ \ \ \ Paused,}
+\DoxyCodeLine{00032\ \ \ \ \ GameEnd,}
+\DoxyCodeLine{00033\ \ \ \ \ Credits}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Class\ managing\ different\ game\ states.}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_state_manager}{GameStateManager}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ the\ shared\ context.}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_game_state_manager}{GameStateManager}}(\mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ sharedContext);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_game_state_manager}{\string~GameStateManager}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ game\ state\ manager.}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keyword}{const}\ sf::Time\&\ time);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Draw\ method\ for\ rendering\ the\ current\ game\ state.}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Process\ requests\ to\ remove\ game\ states.}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ ProcessRequest();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ shared\ context.}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ GetContext();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ a\ specific\ game\ state\ exists.}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ HasState(\textcolor{keyword}{const}\ StateType\&\ type);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Switch\ to\ a\ new\ game\ state.}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ SwitchTo(\textcolor{keyword}{const}\ StateType\&\ type);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ game\ state.}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ Remove(\textcolor{keyword}{const}\ StateType\&\ type);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ game\ state\ based\ on\ its\ type.}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ createState(\textcolor{keyword}{const}\ StateType\&\ type);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ game\ state\ based\ on\ its\ type.}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ removeState(\textcolor{keyword}{const}\ StateType\&\ type);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Register\ a\ new\ game\ state\ type\ with\ its\ factory\ function.}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ registerState(\textcolor{keyword}{const}\ StateType\&\ type)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ stateFactory[type]\ =\ [\textcolor{keyword}{this}]()-\/>\mbox{\hyperlink{class_base_state}{BaseState}}*}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T(\textcolor{keyword}{this});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ sharedContext;\ \textcolor{comment}{//\ Shared\ context\ among\ game\ states.}}
+\DoxyCodeLine{00088\ \ \ \ \ StateContainer\ states;\ \textcolor{comment}{//\ Container\ holding\ active\ game\ states.}}
+\DoxyCodeLine{00089\ \ \ \ \ TypeContainer\ toRemove;\ \textcolor{comment}{//\ Container\ holding\ game\ states\ to\ be\ removed.}}
+\DoxyCodeLine{00090\ \ \ \ \ StateFactory\ stateFactory;\ \textcolor{comment}{//\ Factory\ mapping\ StateType\ to\ BaseState\ pointers.}}
+\DoxyCodeLine{00091\ \};}
+
+\end{DoxyCode}

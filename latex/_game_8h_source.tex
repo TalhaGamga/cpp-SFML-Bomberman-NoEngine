@@ -1,0 +1,54 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Window.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameStateManager.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CharacterBase.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Level.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Class\ representing\ the\ main\ game\ logic.}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Constructor.}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_game}{\string~Game}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Late\ update\ method\ called\ during\ the\ game\ loop\ after\ regular\ update.}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ LateUpdate();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ game.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ Render();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ game\ window.}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_window}{Window}}*\ GetWindow();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Restart\ the\ game\ clock.}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ RestartClock();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Game\ window.}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_window}{Window}}\ window;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Shared\ context\ for\ game\ objects.}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_shared_context}{SharedContext}}\ sharedContext;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Game\ state\ manager\ for\ handling\ different\ game\ states.}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_game_state_manager}{GameStateManager}}\ gameStateManager;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ SFML\ clock\ for\ measuring\ elapsed\ time.}}
+\DoxyCodeLine{00045\ \ \ \ \ sf::Clock\ clock;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Elapsed\ time\ since\ the\ last\ frame.}}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Time\ elapsed;}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

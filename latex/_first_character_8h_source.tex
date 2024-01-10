@@ -1,0 +1,122 @@
+\doxysection{First\+Character.\+h}
+\hypertarget{_first_character_8h_source}{}\label{_first_character_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}CharacterBase.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Specialization\ of\ std::hash\ for\ sf::Vector2i\ to\ use\ it\ in\ unordered\_map}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }std\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }hash<sf::Vector2i>\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::size\_t\ operator()(\textcolor{keyword}{const}\ sf::Vector2i\&\ k)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash<int>()(k.x)\ \string^\ (hash<int>()(k.y)\ <<\ 1);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Class\ representing\ the\ first\ character\ in\ the\ game.}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_first_character}{FirstCharacter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_character_base}{CharacterBase}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ map\ data,\ texture\ file\ path,\ and\ initial\ position.}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_first_character}{FirstCharacter}}(\mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData,\ std::string\ textureWay,\ sf::Vector2f\ initPos);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_first_character}{\string~FirstCharacter}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ called\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ character.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Abstract\ method\ for\ drawing\ the\ character.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(sf::RenderTarget\&\ window,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Method\ for\ taking\ damage.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TakeDamage(\textcolor{keywordtype}{float}\ damage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ movement\ direction\ of\ the\ character.}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ SetMovementDirection(sf::Vector2i\ direction)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Drop\ a\ bomb.}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ DropBomb()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Movement\ method\ for\ moving\ upward.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ moveUp(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Movement\ method\ for\ moving\ downward.}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ moveDown(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Movement\ method\ for\ moving\ rightward.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ moveRight(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Movement\ method\ for\ moving\ leftward.}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ moveLeft(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Idle\ method\ called\ when\ there\ is\ no\ movement.}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ idle(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Type\ alias\ for\ movement\ methods.}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{using\ }MovementMethod\ =\ std::function<void(sf::Time)>;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Mapping\ of\ movement\ directions\ to\ corresponding\ movement\ methods.}}
+\DoxyCodeLine{00067\ \ \ \ \ std::unordered\_map<sf::Vector2i,\ MovementMethod>\ movementMethods\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{sf::Vector2i(0,\ 1),\ std::bind(\&FirstCharacter::moveUp,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{\ sf::Vector2i(0,\ -\/1),\ std::bind(\&FirstCharacter::moveDown,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{\ sf::Vector2i(-\/1,\ 0),\ std::bind(\&FirstCharacter::moveLeft,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{\ sf::Vector2i(1,\ 0),\ std::bind(\&FirstCharacter::moveRight,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{\ sf::Vector2i(0,\ 0),\ std::bind(\&FirstCharacter::idle,\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ collisions\ with\ other\ collidable\ objects.}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckCollision()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ a\ collision\ with\ another\ collidable\ object\ occurs.}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ onCollisionEnter(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ collision\ with\ another\ collidable\ object\ ends.}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ onCollisionExit(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ Handle\ the\ movement\ direction\ of\ the\ character\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ handleMovementDirection(sf::Time\ elapsed);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ General\ movement\ method\ for\ the\ character.}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ movement(sf::Time\&\ elapsed);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ Disable\ movement\ when\ colliding\ with\ an\ obstacle.}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ disableMovement(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Enable\ movement\ after\ colliding\ with\ an\ obstacle.}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ enableMovement(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Move\ the\ health\ bar\ of\ the\ character.}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ moveHealthBar();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Map\ data\ associated\ with\ the\ character.}}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ character\ is\ blocked.}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ isBlocked;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ Position\ to\ drop\ a\ bomb.}}
+\DoxyCodeLine{00107\ \ \ \ \ sf::Vector2f\ dropPos;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ Shape\ representing\ the\ collider\ used\ for\ blocking\ movement.}}
+\DoxyCodeLine{00110\ \ \ \ \ sf::RectangleShape*\ blockerColliderShape;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ Texture\ for\ the\ character.}}
+\DoxyCodeLine{00113\ \ \ \ \ sf::Texture\ charTexture;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Collider\ used\ for\ blocking\ movement.}}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_collider}{Collider}}*\ blockerCollider;}
+\DoxyCodeLine{00117\ \};}
+
+\end{DoxyCode}

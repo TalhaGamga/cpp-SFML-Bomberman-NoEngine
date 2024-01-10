@@ -1,0 +1,177 @@
+\doxysection{Game\+End\+State Class Reference}
+\hypertarget{class_game_end_state}{}\label{class_game_end_state}\index{GameEndState@{GameEndState}}
+Inheritance diagram for Game\+End\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_end_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_end_state_ac9d259076160b2f01bdbac63676dc1f7}\label{class_game_end_state_ac9d259076160b2f01bdbac63676dc1f7} 
+{\bfseries Game\+End\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_game_end_state_ae1326c50f1f361788dfe7d669ec8be1e}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_a4861f7bf1ab862f7d417f1a4af39437f}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_ac37c0b8a5ab975a02c081ae47db7ec6f}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_af7e14b5622316a554c6e36dc1b624c8e}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_a915a292332d05983ed2e601c1f6c2781}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_a9d488a6ac8739b41b8c75cfe547945f0}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_adfcbddf2fb354a47502d7ad5dd382b43}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_game_end_state_a3f4a620e4c1a53adb1d6901487a74103}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_game_end_state_a216ab6fb78a9073f10a1cd87ddf9193c}{Draw}} () override
+\item 
+\Hypertarget{class_game_end_state_ad6e4f4560a117a7c343c3b27766fea6e}\label{class_game_end_state_ad6e4f4560a117a7c343c3b27766fea6e} 
+void {\bfseries Go\+To\+Main\+Menu} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_end_state_a915a292332d05983ed2e601c1f6c2781}\label{class_game_end_state_a915a292332d05983ed2e601c1f6c2781} 
+\index{GameEndState@{GameEndState}!Activate@{Activate}}
+\index{Activate@{Activate}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_ac37c0b8a5ab975a02c081ae47db7ec6f}\label{class_game_end_state_ac37c0b8a5ab975a02c081ae47db7ec6f} 
+\index{GameEndState@{GameEndState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_a9d488a6ac8739b41b8c75cfe547945f0}\label{class_game_end_state_a9d488a6ac8739b41b8c75cfe547945f0} 
+\index{GameEndState@{GameEndState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_a216ab6fb78a9073f10a1cd87ddf9193c}\label{class_game_end_state_a216ab6fb78a9073f10a1cd87ddf9193c} 
+\index{GameEndState@{GameEndState}!Draw@{Draw}}
+\index{Draw@{Draw}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_ae1326c50f1f361788dfe7d669ec8be1e}\label{class_game_end_state_ae1326c50f1f361788dfe7d669ec8be1e} 
+\index{GameEndState@{GameEndState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_a4861f7bf1ab862f7d417f1a4af39437f}\label{class_game_end_state_a4861f7bf1ab862f7d417f1a4af39437f} 
+\index{GameEndState@{GameEndState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_af7e14b5622316a554c6e36dc1b624c8e}\label{class_game_end_state_af7e14b5622316a554c6e36dc1b624c8e} 
+\index{GameEndState@{GameEndState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_a3f4a620e4c1a53adb1d6901487a74103}\label{class_game_end_state_a3f4a620e4c1a53adb1d6901487a74103} 
+\index{GameEndState@{GameEndState}!Tick@{Tick}}
+\index{Tick@{Tick}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_game_end_state_adfcbddf2fb354a47502d7ad5dd382b43}\label{class_game_end_state_adfcbddf2fb354a47502d7ad5dd382b43} 
+\index{GameEndState@{GameEndState}!Update@{Update}}
+\index{Update@{Update}!GameEndState@{GameEndState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+End\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+End\+State.\+h\item 
+Game\+End\+State.\+cpp\end{DoxyCompactItemize}

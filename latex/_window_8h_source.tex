@@ -1,0 +1,95 @@
+\doxysection{Window.\+h}
+\hypertarget{_window_8h_source}{}\label{_window_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics/Drawable.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics/RenderWindow.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EventManager.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Class\ representing\ the\ game\ window.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_window}{Window}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor.}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_window}{Window}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ title\ and\ size\ parameters.}}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_window}{Window}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keyword}{const}\ sf::Vector2u\&\ size);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_window}{\string~Window}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Begin\ drawing\ by\ clearing\ the\ window.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ BeginDraw();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ End\ drawing\ and\ display\ the\ changes.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ EndDraw();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ for\ handling\ window\ events.}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ window\ is\ closed.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsDone();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ window\ is\ in\ full-\/screen\ mode.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsFullScreen();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ size\ of\ the\ window.}}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Vector2u\ GetWindowSize();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ event\ manager\ associated\ with\ the\ window.}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{EventManager}}*\ GetEventManager();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ window\ is\ currently\ focused.}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsFocused();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Toggle\ full-\/screen\ mode.}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ ToggleFullScreen(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Close\ the\ window.}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ Close(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ underlying\ SFML\ RenderWindow.}}
+\DoxyCodeLine{00049\ \ \ \ \ sf::RenderWindow*\ GetRenderWindow();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Setup\ method\ for\ initializing\ the\ window.}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ Setup(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keyword}{const}\ sf::Vector2u\&\ size);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Destroy\ method\ for\ cleaning\ up\ resources.}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ Destroy();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Create\ method\ for\ creating\ the\ window.}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ Create();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Event\ manager\ for\ handling\ window\ events.}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{EventManager}}\ eventManager;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ SFML\ RenderWindow\ object.}}
+\DoxyCodeLine{00065\ \ \ \ \ sf::RenderWindow\ window;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ the\ window.}}
+\DoxyCodeLine{00068\ \ \ \ \ sf::Vector2u\ windowSize;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Title\ of\ the\ window.}}
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ windowTitle;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Background\ color.}}
+\DoxyCodeLine{00074\ \ \ \ \ sf::Color*\ bgColor;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Texture\ for\ background.}}
+\DoxyCodeLine{00077\ \ \ \ \ sf::Texture\ bgTexture;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Sprite\ for\ background.}}
+\DoxyCodeLine{00080\ \ \ \ \ sf::Sprite\ bgSprite;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ window\ is\ closed.}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDone;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ window\ is\ in\ full-\/screen\ mode.}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ isFullScreen;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Flag\ indicating\ if\ the\ window\ is\ focused.}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ isFocused;}
+\DoxyCodeLine{00090\ \};}
+
+\end{DoxyCode}

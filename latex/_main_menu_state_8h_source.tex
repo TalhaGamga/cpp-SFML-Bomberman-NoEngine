@@ -1,0 +1,67 @@
+\doxysection{Main\+Menu\+State.\+h}
+\hypertarget{_main_menu_state_8h_source}{}\label{_main_menu_state_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BaseState.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameStateManager.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Class\ representing\ the\ main\ menu\ state\ of\ the\ game.}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu_state}{MainMenuState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_state}{BaseState}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ the\ game\ state\ manager.}}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_main_menu_state}{MainMenuState}}(\mbox{\hyperlink{class_game_state_manager}{GameStateManager}}*\ stateManager)\ :\ \mbox{\hyperlink{class_base_state}{BaseState}}(stateManager)\ \{\}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ state\ is\ created.}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ OnCreate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Called\ when\ the\ state\ is\ destroyed.}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ OnDestroy()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Add\ input\ callbacks\ for\ the\ state.}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ AddInputCallbacks()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Remove\ input\ callbacks\ for\ the\ state.}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveInputCallbacks()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Activate\ the\ state.}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ Activate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Deactivate\ the\ state.}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ Deactivate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ called\ based\ on\ elapsed\ time.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \ Tick(\textcolor{keyword}{const}\ sf::Time\&\ time)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Draw\ method\ for\ rendering\ the\ state.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Callback\ for\ mouse\ click\ events.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ MouseClick(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Text\ for\ displaying\ menu\ options.}}
+\DoxyCodeLine{00043\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ buttons.}}
+\DoxyCodeLine{00046\ \ \ \ \ sf::Vector2f\ buttonSize;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Position\ of\ buttons.}}
+\DoxyCodeLine{00049\ \ \ \ \ sf::Vector2f\ buttonPos;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Padding\ between\ buttons.}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ buttonPadding;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Rectangle\ shapes\ for\ buttons.}}
+\DoxyCodeLine{00055\ \ \ \ \ sf::RectangleShape\ rects[2];}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Text\ labels\ for\ buttons.}}
+\DoxyCodeLine{00058\ \ \ \ \ sf::Text\ labels[2];}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Font\ used\ for\ text\ rendering.}}
+\DoxyCodeLine{00061\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

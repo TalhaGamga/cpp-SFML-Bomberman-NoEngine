@@ -6,153 +6,178 @@
 
 FirstCharacter::FirstCharacter(MapData* mapData, std::string textureWay, sf::Vector2f initPos) : CharacterBase(mapData), isBlocked(false), dropPos(0, 0)
 {
-	charShape = new sf::RectangleShape();
-	charShape->setSize(sf::Vector2f(40.0f, 40.0f));
-	charShape->setOrigin(charShape->getSize().x / 2, charShape->getSize().y / 2);
+    // Initialize FirstCharacter with mapData, texture path, and initial position
 
-	wideCollider = new Collider(charShape);
+    // Create a rectangle shape for the character
+    charShape = new sf::RectangleShape();
+    charShape->setSize(sf::Vector2f(40.0f, 40.0f));
+    charShape->setOrigin(charShape->getSize().x / 2, charShape->getSize().y / 2);
 
-	this->mapData = mapData;
+    // Create a wide collider for collision detection
+    wideCollider = new Collider(charShape);
 
-	setPosition(initPos);
-	charShape->setPosition(getPosition());
+    this->mapData = mapData;
 
-	wideCollider->BindOnCollisionEnter(this, &FirstCharacter::onCollisionEnter);
-	wideCollider->BindOnCollisionExit(this, &FirstCharacter::onCollisionExit);
+    // Set initial position and update position for character shape
+    setPosition(initPos);
+    charShape->setPosition(getPosition());
 
-	initialHp = 100;
+    // Bind collision callbacks for wide collider
+    wideCollider->BindOnCollisionEnter(this, &FirstCharacter::onCollisionEnter);
+    wideCollider->BindOnCollisionExit(this, &FirstCharacter::onCollisionExit);
 
-	// Blocker
-	blockerColliderShape = new sf::RectangleShape(charShape->getSize() - sf::Vector2f(2.0f, 2.0f));
-	blockerColliderShape->setOrigin(blockerColliderShape->getSize().x / 2, blockerColliderShape->getSize().y / 2);
-	blockerColliderShape->setPosition(charShape->getPosition());
+    initialHp = 250;
 
-	blockerCollider = new Collider(blockerColliderShape);
+    // Blocker
+    blockerColliderShape = new sf::RectangleShape(charShape->getSize() - sf::Vector2f(10.0f, 10.0f));
+    blockerColliderShape->setOrigin(blockerColliderShape->getSize().x / 2, blockerColliderShape->getSize().y / 2);
+    blockerColliderShape->setPosition(charShape->getPosition());
 
-	blockerCollider->BindOnCollisionEnter(this, &FirstCharacter::disableMovement);
-	blockerCollider->BindOnCollisionExit(this, &FirstCharacter::enableMovement);
+    blockerCollider = new Collider(blockerColliderShape);
 
-	mapData->AddToMapObjs(this);
-	mapData->AddToCollidables(this);
+    // Bind collision callbacks for blocker collider
+    blockerCollider->BindOnCollisionEnter(this, &FirstCharacter::disableMovement);
+    blockerCollider->BindOnCollisionExit(this, &FirstCharacter::enableMovement);
 
-	isObstacle = true;
+    // Add the character to map objects and collidables
+    mapData->AddToMapObjs(this);
+    mapData->AddToCollidables(this);
 
-	SetHp(100);
+    isObstacle = true;
 
-	healthBar = new HealthBar(this);
+    // Set initial health and create health bar
+    SetHp(initialHp);
+    healthBar = new HealthBar(this);
 
-	if (charTexture.loadFromFile(textureWay))
-	{
-		charShape->setTexture(&charTexture);
-	}
-};
+    // Load texture for the character if available
+    if (charTexture.loadFromFile(textureWay))
+    {
+        charShape->setTexture(&charTexture);
+    }
+}
 
 FirstCharacter::~FirstCharacter()
 {
+    // Destructor for FirstCharacter
 }
 
 void FirstCharacter::Update()
 {
-	blockerColliderShape->setPosition(getPosition() + (sf::Vector2f)movementDirection);
-
-	CheckCollision();
-
-	moveHealthBar();
+    // Update the character, checking collision and health bar movement
+    blockerColliderShape->setPosition(getPosition() + (sf::Vector2f)movementDirection * 5.0f);
+    CheckCollision();
+    moveHealthBar();
 }
 
 void FirstCharacter::Tick(sf::Time elapsed)
 {
-	handleMovementDirection(elapsed);
-
-	movement(elapsed);
-
-	healthBar->Tick(elapsed);
+    // Handle movement, collisions, and health bar updates over time
+    handleMovementDirection(elapsed);
+    movement(elapsed);
+    healthBar->Tick(elapsed);
 }
 
 void FirstCharacter::movement(sf::Time& elapsed)
 {
-	if (!isBlocked)
-	{
-		move(movementDirection.x * elapsed.asSeconds() * moveSpeed, movementDirection.y * elapsed.asSeconds() * moveSpeed);
-	}
+    // Move the character if not blocked
+    if (!isBlocked)
+    {
+        move(movementDirection.x * elapsed.asSeconds() * moveSpeed, movementDirection.y * elapsed.asSeconds() * moveSpeed);
+    }
 
-	charShape->setPosition(getPosition());
+    charShape->setPosition(getPosition());
 }
 
 void FirstCharacter::disableMovement(Collidable* other)
 {
+    // Disable movement when colliding with certain objects
 
-	if (Bomb* bomb = dynamic_cast<Bomb*>(other))
-	{
-		if (bomb->GetDropper() == this)
-		{
-			return;
-		}
-	}
+    // Check if colliding with a bomb dropped by the character
+    if (Bomb* bomb = dynamic_cast<Bomb*>(other))
+    {
+        if (bomb->GetDropper() == this)
+        {
+            return;
+        }
+    }
 
-	if (other && other->isObstacle)
-	{
-		isBlocked = true;
-	}
+    // Check if colliding with an obstacle
+    if (other && other->isObstacle)
+    {
+        isBlocked = true;
+    }
 }
 
 void FirstCharacter::enableMovement(Collidable* other)
 {
-	isBlocked = false;
+    // Enable movement after collision exit
+    isBlocked = false;
 }
 
 void FirstCharacter::moveHealthBar()
 {
-	sf::Vector2f healthBarOffSet = sf::Vector2f(getPosition().x, charShape->getGlobalBounds().top - 5.0f);
-	healthBar->setPosition(healthBarOffSet);
-	healthBar->Update();
+    // Move and update the health bar position
+    sf::Vector2f healthBarOffSet = sf::Vector2f(getPosition().x, charShape->getGlobalBounds().top - 5.0f);
+    healthBar->setPosition(healthBarOffSet);
+    healthBar->Update();
 }
 
 void FirstCharacter::draw(sf::RenderTarget& window, sf::RenderStates states) const
 {
-	window.draw(*charShape);
+    // Draw the character on the window
+    window.draw(*charShape);
 }
 
 void FirstCharacter::TakeDamage(float damage)
 {
-	currentHp -= damage;
+    // Reduce character's health and trigger damage events
 
-	for (auto& method : onTakingDamage)
-	{
-		method();
-	}
+    currentHp -= damage;
 
-	printf("%f\n", currentHp);
-	if (currentHp <= 0)
-	{
-		onCharacterDied();
-		charShape->setFillColor(sf::Color::Red);
-	}
+    // Execute damage event callbacks
+    for (auto& method : onTakingDamage)
+    {
+        method();
+    }
+
+    printf("%f\n", currentHp);
+
+    // Check if the character is dead
+    if (currentHp <= 0)
+    {
+        onCharacterDied();
+        charShape->setFillColor(sf::Color::Red);
+    }
 }
 
 void FirstCharacter::SetMovementDirection(sf::Vector2i direction)
 {
-	movementDirection = direction;
+    // Set the movement direction of the character
+    movementDirection = direction;
 }
 
 void FirstCharacter::onCollisionEnter(Collidable* other)
 {
+    // Handle collision enter events
 }
 
 void FirstCharacter::onCollisionExit(Collidable* other)
 {
+    // Handle collision exit events
 }
 
 void FirstCharacter::Render(sf::RenderWindow* window)
 {
-	window->draw(*this);
-	healthBar->Render(window);
+    // Render the character and health bar on the window
+    window->draw(*this);
+    healthBar->Render(window);
 }
 
 void FirstCharacter::DropBomb()
 {
-	dropPos = getPosition() - (sf::Vector2f)movementDirection * 25.0f;
-	bomb = new Bomb(dropPos, mapData, this);
+    // Drop a bomb at a specified position
+    dropPos = getPosition() - (sf::Vector2f)movementDirection * 25.0f;
+    bomb = new Bomb(dropPos, mapData, this);
 }
 
 void FirstCharacter::moveUp(sf::Time elapsed) {}
@@ -167,26 +192,29 @@ void FirstCharacter::idle(sf::Time elapsed) {}
 
 void FirstCharacter::CheckCollision()
 {
-	for (auto& collidable : mapData->collidables)
-	{
-		if (collidable == this)
-		{
-			continue;
-		}
+    // Check collisions with other collidables in the map
+    for (auto& collidable : mapData->collidables)
+    {
+        if (collidable == this)
+        {
+            continue;
+        }
 
-		blockerCollider->CheckCollisionEnter(collidable);
-		blockerCollider->CheckCollisionExit(collidable);
+        // Check collision enter and exit for the blocker and wide colliders
+        blockerCollider->CheckCollisionEnter(collidable);
+        blockerCollider->CheckCollisionExit(collidable);
 
-		wideCollider->CheckCollisionEnter(collidable);
-		wideCollider->CheckCollisionExit(collidable);
-	}
+        wideCollider->CheckCollisionEnter(collidable);
+        wideCollider->CheckCollisionExit(collidable);
+    }
 }
 
 void FirstCharacter::handleMovementDirection(sf::Time elapsed)
 {
-	auto moveItr = movementMethods.find(movementDirection);
-	if (moveItr != movementMethods.end())
-	{
-		moveItr->second(elapsed);
-	}
+    // Handle movement direction based on current input
+    auto moveItr = movementMethods.find(movementDirection);
+    if (moveItr != movementMethods.end())
+    {
+        moveItr->second(elapsed);
+    }
 }

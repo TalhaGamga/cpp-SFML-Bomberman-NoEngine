@@ -1,0 +1,69 @@
+\doxysection{Collider.\+h}
+\hypertarget{_collider_8h_source}{}\label{_collider_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Collidable.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collidable}{Collidable}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Structure\ to\ hold\ collision\ data,\ such\ as\ collided\ collidables.}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_collision_data}{CollisionData}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<Collidable*>\ collidedCollidables;}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Type\ aliases\ for\ vectors\ of\ collision\ event\ functions.}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }OnCollisionEnter\ =\ std::vector<std::function<void(\mbox{\hyperlink{class_collidable}{Collidable}}*)>>;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }OnCollisionExit\ =\ std::vector<std::function<void(\mbox{\hyperlink{class_collidable}{Collidable}}*)>>;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Class\ representing\ a\ collider\ for\ detecting\ collisions\ with\ other\ collidable\ objects.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collider}{Collider}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ a\ rectangle\ shape\ associated\ with\ the\ collider.}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_collider}{Collider}}(sf::RectangleShape*\ rect);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Checks\ for\ collision\ enter\ with\ another\ collidable\ object.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ CheckCollisionEnter(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Checks\ for\ collision\ exit\ with\ another\ collidable\ object.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ CheckCollisionExit(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Vector\ of\ functions\ to\ be\ called\ when\ a\ collision\ enter\ event\ occurs.}}
+\DoxyCodeLine{00032\ \ \ \ \ OnCollisionEnter\ onCollisionEnter;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Binds\ a\ member\ function\ to\ the\ collision\ enter\ event.}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ BindOnCollisionEnter(T*\ instance,\ \textcolor{keywordtype}{void}\ (T::*\ method)(\mbox{\hyperlink{class_collidable}{Collidable}}*))\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ onCollisionEnter.push\_back(std::bind(method,\ instance,\ std::placeholders::\_1));}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Vector\ of\ functions\ to\ be\ called\ when\ a\ collision\ exit\ event\ occurs.}}
+\DoxyCodeLine{00041\ \ \ \ \ OnCollisionExit\ onCollisionExit;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Binds\ a\ member\ function\ to\ the\ collision\ exit\ event.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ BindOnCollisionExit(T*\ instance,\ \textcolor{keywordtype}{void}\ (T::*\ method)(\mbox{\hyperlink{class_collidable}{Collidable}}*))\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ onCollisionExit.push\_back(std::bind(method,\ instance,\ std::placeholders::\_1));}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ rectangle\ shape\ associated\ with\ the\ collision\ checker.}}
+\DoxyCodeLine{00050\ \ \ \ \ sf::RectangleShape*\ GetCollisionCheckerRect();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Checks\ for\ intersection\ between\ the\ collision\ checker\ and\ another\ collider.}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkCollisionCheckerIntersection(\mbox{\hyperlink{class_collider}{Collider}}*\ other);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ Outer\ collider\ is\ used\ to\ detect\ collision\ enter\ and\ exit.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ It\ is\ used\ in\ taking\ damage,\ hit,\ etc.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00060\ \ \ \ \ sf::RectangleShape*\ collisionSensorRect;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Structure\ to\ store\ collision\ data.}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_collision_data}{CollisionData}}\ data;}
+\DoxyCodeLine{00064\ \};}
+
+\end{DoxyCode}

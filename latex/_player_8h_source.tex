@@ -1,0 +1,89 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}FirstCharacter.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameStateManager.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Enums.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Alias\ for\ representing\ a\ pair\ of\ direction\ and\ input\ state.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }DirectionInputState\ =\ std::pair<Direction2D,\ int>;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Structure\ representing\ 2D\ input\ axis\ with\ positive\ and\ negative\ input\ states.}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_input_axis2_d}{InputAxis2D}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{struct_input_axis2_d}{InputAxis2D}}();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{struct_input_axis2_d}{InputAxis2D}}(DirectionInputState\ positiveInputState,\ DirectionInputState\ negativeInputState)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ :\ positiveInputState(positiveInputState),\ negativeInputState(negativeInputState)\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ DirectionInputState\ positiveInputState;}
+\DoxyCodeLine{00017\ \ \ \ \ DirectionInputState\ negativeInputState;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Alias\ for\ representing\ movement\ input\ configuration.}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }MovementInput\ =\ std::unordered\_map<Axis,\ InputAxis2D>;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Class\ representing\ the\ player\ in\ the\ game.}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ the\ shared\ context\ and\ map\ data.}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(\mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ sharedContext,\ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_player}{\string~Player}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ player.}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ character\ associated\ with\ the\ player.}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_character_base}{CharacterBase}}*\ GetCharacter();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Callback\ methods\ for\ handling\ input\ events.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ pressedUpward(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ releasedUpward(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ pressedDownward(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ releasedDownward(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ pressedRight(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ releasedRight(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ pressedLeft(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ releasedLeft(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ dropBomb(\mbox{\hyperlink{struct_event_details}{EventDetails}}*\ details);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Add\ input\ callbacks\ for\ the\ player.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ addInputCallbacks();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Remove\ input\ callbacks\ for\ the\ player.}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ removeInputCallbacks();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ movement\ direction\ based\ on\ input.}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ SetMovementDirection();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Callback\ for\ when\ the\ character\ dies.}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ onCharacterdied();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Flags\ indicating\ whether\ certain\ movement\ keys\ are\ pressed.}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressedUpward\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressedDownward\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressedRight\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressedLeft\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ shared\ context.}}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{struct_shared_context}{SharedContext}}*\ sharedContext;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ character\ associated\ with\ the\ player.}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_character_base}{CharacterBase}}*\ character;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Mapping\ of\ movement\ input\ configurations.}}
+\DoxyCodeLine{00079\ \ \ \ \ MovementInput\ movementInput;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Current\ movement\ direction\ of\ the\ player.}}
+\DoxyCodeLine{00082\ \ \ \ \ sf::Vector2i\ movementDirection;}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+
+\end{DoxyCode}

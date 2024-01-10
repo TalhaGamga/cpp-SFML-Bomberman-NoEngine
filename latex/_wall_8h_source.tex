@@ -1,0 +1,57 @@
+\doxysection{Wall.\+h}
+\hypertarget{_wall_8h_source}{}\label{_wall_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Collidable.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Class\ representing\ a\ wall\ object\ in\ the\ game.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wall}{Wall}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_map_object}{MapObject}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collidable}{Collidable}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ the\ position\ and\ map\ data.}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_wall}{Wall}}(sf::Vector2f\ pos,\ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Destructor.}}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_wall}{\string~Wall}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Update\ method\ called\ during\ the\ game\ loop.}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Tick\ method\ for\ handling\ time-\/related\ updates.}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ Tick(sf::Time\ elapsed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Render\ method\ for\ rendering\ the\ wall.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ Render(sf::RenderWindow*\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Overridden\ draw\ method\ from\ sf::Drawable.}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(sf::RenderTarget\&\ window,\ sf::RenderStates\ states)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ position\ of\ the\ wall.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ SetPosition(sf::Vector2f\ pos);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ perform\ an\ attack\ on\ another\ collidable\ object.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ Attack(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ collisions.}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckCollision()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Callback\ for\ when\ a\ collidable\ object\ enters\ the\ collision\ area.}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionEnter(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Callback\ for\ when\ a\ collidable\ object\ exits\ the\ collision\ area.}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onCollisionExit(\mbox{\hyperlink{class_collidable}{Collidable}}*\ other)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Rectangle\ shape\ representing\ the\ wall.}}
+\DoxyCodeLine{00045\ \ \ \ \ sf::RectangleShape\ wallShape;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Texture\ for\ the\ wall.}}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Texture\ wallTexture;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ map\ data.}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData;}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,161 @@
+\doxysection{Character\+Base Class Reference}
+\hypertarget{class_character_base}{}\label{class_character_base}\index{CharacterBase@{CharacterBase}}
+Inheritance diagram for Character\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_character_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_base_a9b6b519b9cd7b053883405d98a47d0c7}\label{class_character_base_a9b6b519b9cd7b053883405d98a47d0c7} 
+{\bfseries Character\+Base} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void \mbox{\hyperlink{class_character_base_a6a7be71fa100bd5bda4ee317d913906d}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\item 
+\Hypertarget{class_character_base_ac658a658942ed326ffb61346a3967b6c}\label{class_character_base_ac658a658942ed326ffb61346a3967b6c} 
+virtual void {\bfseries Set\+Movement\+Direction} (sf\+::\+Vector2i direction)=0
+\item 
+\Hypertarget{class_character_base_a83bed008778bea5e118e4721120add00}\label{class_character_base_a83bed008778bea5e118e4721120add00} 
+virtual void {\bfseries Drop\+Bomb} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Map\+Object} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Take\+Damage} (float damage)=0
+\item 
+void {\bfseries Set\+Hp} (float initial\+Hp)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Bind\+On\+Taking\+Damage} (T \texorpdfstring{$\ast$}{*}instance, void(T\+::\texorpdfstring{$\ast$}{*}method)())
+\item 
+float {\bfseries get\+Initial\+Hp} ()
+\item 
+float {\bfseries get\+Current\+Hp} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_base_ab7a298e3fa3e0c257a2ce392bc052295}\label{class_character_base_ab7a298e3fa3e0c257a2ce392bc052295} 
+On\+Character\+Died {\bfseries on\+Character\+Died}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Obstacle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Died} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_base_a678904c36b67a3775f349e2f5a6b204f}\label{class_character_base_a678904c36b67a3775f349e2f5a6b204f} 
+virtual void {\bfseries move\+Up} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_a6e52c17df2f84df50ba4d7683e99a9d1}\label{class_character_base_a6e52c17df2f84df50ba4d7683e99a9d1} 
+virtual void {\bfseries move\+Down} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_ae22dd6b317a69b2cc91bb7af86d39bee}\label{class_character_base_ae22dd6b317a69b2cc91bb7af86d39bee} 
+virtual void {\bfseries move\+Right} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_ac3adeee3355adac28192635d88a00c90}\label{class_character_base_ac3adeee3355adac28192635d88a00c90} 
+virtual void {\bfseries move\+Left} (sf\+::\+Time elapsed)=0
+\item 
+\Hypertarget{class_character_base_a983c6eb668119561daffdb7a6ab04e81}\label{class_character_base_a983c6eb668119561daffdb7a6ab04e81} 
+virtual void {\bfseries idle} (sf\+::\+Time elapsed)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Check\+Collision} ()=0
+\item 
+virtual void {\bfseries on\+Collision\+Enter} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\item 
+virtual void {\bfseries on\+Collision\+Exit} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_base_aa8c1a1af296cca9adabfa0e042ec6687}\label{class_character_base_aa8c1a1af296cca9adabfa0e042ec6687} 
+sf\+::\+Rectangle\+Shape \texorpdfstring{$\ast$}{*} {\bfseries char\+Shape}
+\item 
+\Hypertarget{class_character_base_aaeb9c1691893d94c861c29867d57fff9}\label{class_character_base_aaeb9c1691893d94c861c29867d57fff9} 
+sf\+::\+Vector2i {\bfseries direction}
+\item 
+\Hypertarget{class_character_base_a66f819a21bcb8c33609ef7f1cf09ec67}\label{class_character_base_a66f819a21bcb8c33609ef7f1cf09ec67} 
+sf\+::\+Vector2f {\bfseries move\+To}
+\item 
+\Hypertarget{class_character_base_a00ad9fe20c0ccaf04c1a3e1897c2d0a1}\label{class_character_base_a00ad9fe20c0ccaf04c1a3e1897c2d0a1} 
+sf\+::\+Vector2f {\bfseries size}
+\item 
+\Hypertarget{class_character_base_aa334993c784876841d437ef38b4c084f}\label{class_character_base_aa334993c784876841d437ef38b4c084f} 
+float {\bfseries move\+Speed} = 50.\+0f
+\item 
+\Hypertarget{class_character_base_adf465113b092162561a8650ee70e39db}\label{class_character_base_adf465113b092162561a8650ee70e39db} 
+\mbox{\hyperlink{class_bomb}{Bomb}} \texorpdfstring{$\ast$}{*} {\bfseries bomb}
+\item 
+\Hypertarget{class_character_base_aeb1c6f99f59f6338b2e4bb84196ae327}\label{class_character_base_aeb1c6f99f59f6338b2e4bb84196ae327} 
+sf\+::\+Vector2i {\bfseries movement\+Direction}
+\item 
+\Hypertarget{class_character_base_a89b057a94d9895753b4f72d4d89dfd41}\label{class_character_base_a89b057a94d9895753b4f72d4d89dfd41} 
+\mbox{\hyperlink{class_health_bar}{Health\+Bar}} \texorpdfstring{$\ast$}{*} {\bfseries health\+Bar}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries map\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries wide\+Collider}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_damageable}{Damageable}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries initial\+Hp}
+\item 
+float {\bfseries current\+Hp}
+\item 
+On\+Taking\+Damage {\bfseries on\+Taking\+Damage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_character_base_a6a7be71fa100bd5bda4ee317d913906d}\label{class_character_base_a6a7be71fa100bd5bda4ee317d913906d} 
+\index{CharacterBase@{CharacterBase}!draw@{draw}}
+\index{draw@{draw}!CharacterBase@{CharacterBase}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Character\+Base\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Character\+Base.\+h\item 
+Character\+Base.\+cpp\end{DoxyCompactItemize}

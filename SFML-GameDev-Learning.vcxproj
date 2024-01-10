@@ -145,14 +145,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bomb.cpp" />
-    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CharacterBase.cpp" />
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CreditsState.cpp" />
     <ClCompile Include="Damageable.cpp" />
     <ClCompile Include="Destructible.cpp" />
-    <ClCompile Include="Enums.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="FirstCharacter.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -171,14 +169,12 @@
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="PausedState.cpp" />
     <ClCompile Include="SecondPlayer.cpp" />
-    <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Bomb.h" />
-    <ClInclude Include="Button.h" />
     <ClInclude Include="Collidable.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CreditsState.h" />
@@ -188,7 +184,6 @@
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameEndState.h" />
     <ClInclude Include="HealthBar.h" />
-    <ClInclude Include="IClickable.h" />
     <ClInclude Include="FirstCharacter.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
@@ -207,7 +202,6 @@
     <ClInclude Include="PausedState.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SecondPlayer.h" />
-    <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

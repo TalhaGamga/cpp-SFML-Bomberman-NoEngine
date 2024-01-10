@@ -1,0 +1,177 @@
+\doxysection{Main\+Menu\+State Class Reference}
+\hypertarget{class_main_menu_state}{}\label{class_main_menu_state}\index{MainMenuState@{MainMenuState}}
+Inheritance diagram for Main\+Menu\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_menu_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_menu_state_a36f0e1eea3ed1f02e85899aa66e99b2d}\label{class_main_menu_state_a36f0e1eea3ed1f02e85899aa66e99b2d} 
+{\bfseries Main\+Menu\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a85eca8394d3760c115443f2a49be7405}{On\+Create}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_afd0bb2505362a26878932adf148f9bfc}{On\+Destroy}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a51dc627c0bd790b9071e576e5d85c8c6}{Add\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a5e140eaefac559a9aa55835eb29f29e8}{Remove\+Input\+Callbacks}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a7644a9faf9d0505bd79a2b29bf3cdb4f}{Activate}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_ad3ff6cfab4d1089cb7c21205df4e4490}{Deactivate}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_abd877e89cff7a5d1c5fb7ee2129c3d02}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a372825a0427acdb08e7111b83f86032d}{Tick}} (const sf\+::\+Time \&time) override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_ae8447a77dc805b1384a4dfe33dcc5cfe}{Draw}} () override
+\item 
+\Hypertarget{class_main_menu_state_aa77b7d49c618fae730b60ecfb1dadbb0}\label{class_main_menu_state_aa77b7d49c618fae730b60ecfb1dadbb0} 
+void {\bfseries Mouse\+Click} (\mbox{\hyperlink{struct_event_details}{Event\+Details}} \texorpdfstring{$\ast$}{*}details)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+State} (\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*}state\+Manager)
+\item 
+virtual void {\bfseries On\+Create} ()=0
+\item 
+virtual void {\bfseries On\+Destroy} ()=0
+\item 
+virtual void {\bfseries Add\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Remove\+Input\+Callbacks} ()=0
+\item 
+virtual void {\bfseries Activate} ()=0
+\item 
+virtual void {\bfseries Deactivate} ()=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Tick} (const sf\+::\+Time \&time)=0
+\item 
+virtual void {\bfseries Draw} ()=0
+\item 
+void {\bfseries Set\+Transparent} (const bool \&transparent)
+\item 
+bool {\bfseries Is\+Transparent} () const
+\item 
+void {\bfseries Set\+Transcendent} (const bool \&transcendence)
+\item 
+bool {\bfseries Is\+Transcendent} () const
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+State\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_state}{Base\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_manager}{Game\+State\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries state\+Manager}
+\item 
+bool {\bfseries is\+Transparent}
+\item 
+bool {\bfseries is\+Transcendent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_menu_state_a7644a9faf9d0505bd79a2b29bf3cdb4f}\label{class_main_menu_state_a7644a9faf9d0505bd79a2b29bf3cdb4f} 
+\index{MainMenuState@{MainMenuState}!Activate@{Activate}}
+\index{Activate@{Activate}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_a51dc627c0bd790b9071e576e5d85c8c6}\label{class_main_menu_state_a51dc627c0bd790b9071e576e5d85c8c6} 
+\index{MainMenuState@{MainMenuState}!AddInputCallbacks@{AddInputCallbacks}}
+\index{AddInputCallbacks@{AddInputCallbacks}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{AddInputCallbacks()}{AddInputCallbacks()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Add\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_ad3ff6cfab4d1089cb7c21205df4e4490}\label{class_main_menu_state_ad3ff6cfab4d1089cb7c21205df4e4490} 
+\index{MainMenuState@{MainMenuState}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_ae8447a77dc805b1384a4dfe33dcc5cfe}\label{class_main_menu_state_ae8447a77dc805b1384a4dfe33dcc5cfe} 
+\index{MainMenuState@{MainMenuState}!Draw@{Draw}}
+\index{Draw@{Draw}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_a85eca8394d3760c115443f2a49be7405}\label{class_main_menu_state_a85eca8394d3760c115443f2a49be7405} 
+\index{MainMenuState@{MainMenuState}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_afd0bb2505362a26878932adf148f9bfc}\label{class_main_menu_state_afd0bb2505362a26878932adf148f9bfc} 
+\index{MainMenuState@{MainMenuState}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_a5e140eaefac559a9aa55835eb29f29e8}\label{class_main_menu_state_a5e140eaefac559a9aa55835eb29f29e8} 
+\index{MainMenuState@{MainMenuState}!RemoveInputCallbacks@{RemoveInputCallbacks}}
+\index{RemoveInputCallbacks@{RemoveInputCallbacks}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{RemoveInputCallbacks()}{RemoveInputCallbacks()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Remove\+Input\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_a372825a0427acdb08e7111b83f86032d}\label{class_main_menu_state_a372825a0427acdb08e7111b83f86032d} 
+\index{MainMenuState@{MainMenuState}!Tick@{Tick}}
+\index{Tick@{Tick}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Tick (\begin{DoxyParamCaption}\item[{const sf\+::\+Time \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+\Hypertarget{class_main_menu_state_abd877e89cff7a5d1c5fb7ee2129c3d02}\label{class_main_menu_state_abd877e89cff7a5d1c5fb7ee2129c3d02} 
+\index{MainMenuState@{MainMenuState}!Update@{Update}}
+\index{Update@{Update}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_state}{Base\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Main\+Menu\+State.\+h\item 
+Main\+Menu\+State.\+cpp\end{DoxyCompactItemize}

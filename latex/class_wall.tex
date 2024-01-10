@@ -1,0 +1,161 @@
+\doxysection{Wall Class Reference}
+\hypertarget{class_wall}{}\label{class_wall}\index{Wall@{Wall}}
+Inheritance diagram for Wall\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_wall}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_wall_a6bf70404021d62d0c61761f4baf844b5}\label{class_wall_a6bf70404021d62d0c61761f4baf844b5} 
+{\bfseries Wall} (sf\+::\+Vector2f pos, \mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+void \mbox{\hyperlink{class_wall_a3a1e64bba1e3188c88edee757c9f6e6d}{Update}} () override
+\item 
+void \mbox{\hyperlink{class_wall_a831ba15498b5a7656024c41d992a107d}{Tick}} (sf\+::\+Time elapsed) override
+\item 
+void \mbox{\hyperlink{class_wall_a7b622a588d9c53cd8f9795b2f84df828}{Render}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window) override
+\item 
+virtual void \mbox{\hyperlink{class_wall_aa95f941a451ac53f158ec86a2472e6f3}{draw}} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const override
+\item 
+\Hypertarget{class_wall_ab01f99397192f40d9095209534971f58}\label{class_wall_ab01f99397192f40d9095209534971f58} 
+void {\bfseries Set\+Position} (sf\+::\+Vector2f pos)
+\item 
+\Hypertarget{class_wall_a5da68cdcb97fc6169d7e7f2906d3dd41}\label{class_wall_a5da68cdcb97fc6169d7e7f2906d3dd41} 
+void {\bfseries Attack} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Map\+Object} (\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*}map\+Data)
+\item 
+virtual void {\bfseries Tick} (sf\+::\+Time elapsed)=0
+\item 
+virtual void {\bfseries Update} ()=0
+\item 
+virtual void {\bfseries Render} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)=0
+\item 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&window, sf\+::\+Render\+States states) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Collider} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wall_a1b66152ed1b3d43c400d17824035ea4d}{Check\+Collision}} () override
+\item 
+virtual void \mbox{\hyperlink{class_wall_a7acba3b56c4d717018fc74b824cd51e0}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\item 
+virtual void \mbox{\hyperlink{class_wall_a7bef9b2ab655361ed5485c12b1e97164}{on\+Collision\+Exit}} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other) override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collidable_a88876505f8bd0b10454d8eb72446bd4e}\label{class_collidable_a88876505f8bd0b10454d8eb72446bd4e} 
+virtual void {\bfseries Check\+Collision} ()=0
+\item 
+\Hypertarget{class_collidable_a59f694ff17e2e0a632f531439ac4552a}\label{class_collidable_a59f694ff17e2e0a632f531439ac4552a} 
+virtual void {\bfseries on\+Collision\+Enter} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\item 
+\Hypertarget{class_collidable_ae621384edcd66c7fa9786d1091ae56df}\label{class_collidable_ae621384edcd66c7fa9786d1091ae56df} 
+virtual void {\bfseries on\+Collision\+Exit} (\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}other)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+Obstacle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_map_object}{Map\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_map_data}{Map\+Data}} \texorpdfstring{$\ast$}{*} {\bfseries map\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_collidable}{Collidable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider}{Collider}} \texorpdfstring{$\ast$}{*} {\bfseries wide\+Collider}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wall_a1b66152ed1b3d43c400d17824035ea4d}\label{class_wall_a1b66152ed1b3d43c400d17824035ea4d} 
+\index{Wall@{Wall}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily void Wall\+::\+Check\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_wall_aa95f941a451ac53f158ec86a2472e6f3}\label{class_wall_aa95f941a451ac53f158ec86a2472e6f3} 
+\index{Wall@{Wall}!draw@{draw}}
+\index{draw@{draw}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Wall\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_wall_a7acba3b56c4d717018fc74b824cd51e0}\label{class_wall_a7acba3b56c4d717018fc74b824cd51e0} 
+\index{Wall@{Wall}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void Wall\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_wall_a7bef9b2ab655361ed5485c12b1e97164}\label{class_wall_a7bef9b2ab655361ed5485c12b1e97164} 
+\index{Wall@{Wall}!onCollisionExit@{onCollisionExit}}
+\index{onCollisionExit@{onCollisionExit}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{onCollisionExit()}{onCollisionExit()}}
+{\footnotesize\ttfamily void Wall\+::on\+Collision\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collidable}{Collidable}} \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_collidable}{Collidable}}.
+
+\Hypertarget{class_wall_a7b622a588d9c53cd8f9795b2f84df828}\label{class_wall_a7b622a588d9c53cd8f9795b2f84df828} 
+\index{Wall@{Wall}!Render@{Render}}
+\index{Render@{Render}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Wall\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_wall_a831ba15498b5a7656024c41d992a107d}\label{class_wall_a831ba15498b5a7656024c41d992a107d} 
+\index{Wall@{Wall}!Tick@{Tick}}
+\index{Tick@{Tick}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Wall\+::\+Tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+\Hypertarget{class_wall_a3a1e64bba1e3188c88edee757c9f6e6d}\label{class_wall_a3a1e64bba1e3188c88edee757c9f6e6d} 
+\index{Wall@{Wall}!Update@{Update}}
+\index{Update@{Update}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Wall\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_map_object}{Map\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Wall.\+h\item 
+Wall.\+cpp\end{DoxyCompactItemize}

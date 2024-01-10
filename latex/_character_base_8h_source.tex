@@ -1,0 +1,71 @@
+\doxysection{Character\+Base.\+h}
+\hypertarget{_character_base_8h_source}{}\label{_character_base_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EventManager.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Bomb.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Collidable.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}MapObject.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Damageable.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}HealthBar.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bomb}{Bomb}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }OnCharacterDied\ =\ std::function<void()>;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Base\ class\ for\ characters\ in\ the\ Bomberman\ game.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_character_base}{CharacterBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_map_object}{MapObject}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_collidable}{Collidable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_damageable}{Damageable}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Constructor\ taking\ a\ pointer\ to\ map\ data.}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_character_base}{CharacterBase}}(\mbox{\hyperlink{struct_map_data}{MapData}}*\ mapData);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Abstract\ method\ to\ draw\ the\ character\ on\ the\ screen.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(sf::RenderTarget\&\ window,\ sf::RenderStates\ states)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Abstract\ methods\ for\ setting\ movement\ direction\ and\ dropping\ bombs.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetMovementDirection(sf::Vector2i\ direction)\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DropBomb()\ =\ 0;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Event\ triggered\ when\ the\ character\ dies.}}
+\DoxyCodeLine{00033\ \ \ \ \ OnCharacterDied\ onCharacterDied;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Shape\ representing\ the\ character.}}
+\DoxyCodeLine{00037\ \ \ \ \ sf::RectangleShape*\ charShape;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Current\ movement\ direction.}}
+\DoxyCodeLine{00040\ \ \ \ \ sf::Vector2i\ direction;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Target\ position\ to\ move\ to.}}
+\DoxyCodeLine{00043\ \ \ \ \ sf::Vector2f\ moveTo;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ the\ character.}}
+\DoxyCodeLine{00046\ \ \ \ \ sf::Vector2f\ size;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Speed\ at\ which\ the\ character\ moves.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ moveSpeed\ =\ 50.0f;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ bomb\ that\ the\ character\ can\ drop.}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_bomb}{Bomb}}*\ bomb;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Abstract\ methods\ for\ movement\ in\ different\ directions\ and\ idle\ state.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ moveUp(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ moveDown(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ moveRight(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ moveLeft(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ idle(sf::Time\ elapsed)\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Current\ movement\ direction\ (used\ internally).}}
+\DoxyCodeLine{00062\ \ \ \ \ sf::Vector2i\ movementDirection;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Health\ bar\ associated\ with\ the\ character.}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}*\ healthBar;}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}
