@@ -5,8 +5,6 @@ Talha Ubeydullah Gamga - 20050111078
 
 •	Project management
 
-•	First Report
-
 •	Version control (GitHub management)
 
 •	Event Manager and Input handling
