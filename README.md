@@ -1,8 +1,10 @@
 SFML Bomberman Project
 This collaborative Bomberman project showcases the combined efforts and expertise of the following team members:
+-
+---------------------------------
 
 Talha Ubeydullah Gamga - 20050111078
-
+-
 •	Project management
 
 •	Version control (GitHub management)
@@ -14,7 +16,7 @@ Talha Ubeydullah Gamga - 20050111078
 ---------------------------------
 
 Muhammed Fatih Asan - 23050151026
-
+-
 •	Third report
 
 •	Assisting with UML diagrams
@@ -26,7 +28,7 @@ Muhammed Fatih Asan - 23050151026
 ---------------------------------
 
 Selçuk Üstün - 20050111072
-
+-
 •	Graphic design
 
 •	Graphic implementation
@@ -38,7 +40,7 @@ Selçuk Üstün - 20050111072
 ---------------------------------
 
 Buğra Bildiren - 20050111022
-
+-
 •	Game state manager
 
 •	Base state, intro state, menu state, play state, paused state implementation
@@ -50,7 +52,7 @@ Buğra Bildiren - 20050111022
 ---------------------------------
 
 Murathan Karakaya - 21050151024
-
+-
 •	Second Report
 
 •	Class diagrams
