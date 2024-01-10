@@ -9,7 +9,7 @@ Talha Ubeydullah Gamga - 20050111078
 
 •	Event Manager and Input handling
 
-•	General OOP architecture and Implementation
+•	General OOP architecture and implementation
 
 Muhammed Fatih Asan - 23050151026
 
