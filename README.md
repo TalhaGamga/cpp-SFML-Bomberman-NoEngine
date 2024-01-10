@@ -11,6 +11,8 @@ Talha Ubeydullah Gamga - 20050111078
 
 •	General OOP architecture and implementation
 
+---------------------------------
+
 Muhammed Fatih Asan - 23050151026
 
 •	Third report
@@ -20,6 +22,8 @@ Muhammed Fatih Asan - 23050151026
 •	Game Mechanic design
 
 •	Health bar implementation
+
+---------------------------------
 
 Selçuk Üstün - 20050111072
 
@@ -31,6 +35,8 @@ Selçuk Üstün - 20050111072
 
 •	Helping implementations and headers
 
+---------------------------------
+
 Buğra Bildiren - 20050111022
 
 •	Game state manager
@@ -40,6 +46,8 @@ Buğra Bildiren - 20050111022
 •	State transitions
 
 •	Helping implementations and headers
+
+---------------------------------
 
 Murathan Karakaya - 21050151024
 
