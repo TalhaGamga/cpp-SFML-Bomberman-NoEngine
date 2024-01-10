@@ -50,6 +50,7 @@ Murathan Karakaya - 21050151024
 •	Main loop implementation
 
 •	Damageable system implementation
+
 ------------------------
 • PROJECT COLLABORATIONS
 
