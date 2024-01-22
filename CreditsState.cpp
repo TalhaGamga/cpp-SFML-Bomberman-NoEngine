@@ -26,7 +26,7 @@ void CreditsState::OnCreate()
 	str[1] = "MUHAMMED FATIH ASAN - ACTOR";
 	str[2] = "BUGRA BILDIREN - DOCTOR";
 	str[3] = "MURATHAN KARAKAYA - WARRIOR";
-	str[4] = "SELCUK USTUN - USTUNBUS CEO";
+	str[4] = "SELCUK USTUN - USTUNER CEO";
 	str[5] = "EXIT";
 
 	// Loop to create and position rectangles and labels for each credit entry.
