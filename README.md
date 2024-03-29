@@ -28,69 +28,8 @@ Pause: P
 Menu: ESC
 
 
-This collaborative Bomberman project showcases the combined efforts and expertise of the following team members:
--
----------------------------------
+Game Video: 
 
-Talha Ubeydullah Gamga - 20050111078
--
-•	Project management
 
-•	Version control (GitHub management)
+https://github.com/TalhaGamga/cpp-SFML-Bomberman/assets/89526484/a29d7560-e153-4762-a302-3d59b7b8c955
 
-•	Event Manager and Input handling
-
-•	General OOP architecture and implementation
-
----------------------------------
-
-Muhammed Fatih Asan - 23050151026
--
-•	Third report
-
-•	Assisting with UML diagrams
-
-•	Game Mechanic design
-
-•	Health bar implementation
-
----------------------------------
-
-Selçuk Üstün - 20050111072
--
-•	Graphic design
-
-•	Graphic implementation
-
-•	Level design
-
-•	Helping implementations and headers
-
----------------------------------
-
-Buğra Bildiren - 20050111022
--
-•	Game state manager
-
-•	Base state, intro state, menu state, play state, paused state implementation
-
-•	State transitions
-
-•	Helping implementations and headers
-
----------------------------------
-
-Murathan Karakaya - 21050151024
--
-•	Second Report
-
-•	Class diagrams
-
-•	Main loop implementation
-
-•	Damageable system implementation
-
-------------------------
-• PROJECT COLLABORATIONS
-
-Our team fostered effective collaboration by allocating tasks based on each member's strengths and encouraging mutual assistance across various project components. The breakdown of responsibilities resulted in a harmonious and successful team effort.
