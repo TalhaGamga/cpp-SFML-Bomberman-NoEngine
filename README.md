@@ -1,4 +1,4 @@
-SFML Bomberman Project
+C++ SFML Bomberman Project
 ---------------------
 
 !!!!
