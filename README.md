@@ -10,7 +10,7 @@ index file is in HTML folder
 Gameplay 🎮
 -
 Player 1
--
+- 
 Arrow keys - Movement
 
 Space - Drop Bomb
